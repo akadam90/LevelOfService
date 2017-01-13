@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="LOSEntitiesDataModel" />
+  <Alias Key="Target" Value="LOSEntitiesDataModel.Store" />
+  <EntityContainerMapping CdmEntityContainer="LOSEntitiesDataModelContainer" StorageEntityContainer="LOSEntitiesDataModelStoreContainer">
+    <EntitySetMapping Name="Bill_Pay">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Bill_Pay">
+        <MappingFragment StoreEntitySet="Bill_Pay">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bill_Pay_Traffic_lk">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Bill_Pay_Traffic_lk">
+        <MappingFragment StoreEntitySet="Bill_Pay_Traffic_lk">
+          <ScalarProperty Name="Service_Level_Id" ColumnName="Service_Level_Id" />
+          <ScalarProperty Name="Lead_Liaison" ColumnName="Lead_Liaison" />
+          <ScalarProperty Name="Liaison" ColumnName="Liaison" />
+          <ScalarProperty Name="Assistant_Director" ColumnName="Assistant_Director" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Spending" ColumnName="Spending" />
+          <ScalarProperty Name="Bill_Pay_Id" ColumnName="Bill_Pay_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bill_Pay_Traffic_Scenarios">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Bill_Pay_Traffic_Scenarios">
+        <MappingFragment StoreEntitySet="Bill_Pay_Traffic_Scenarios">
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Is_Final" ColumnName="Is_Final" />
+          <ScalarProperty Name="Business_Id" ColumnName="Business_Id" />
+          <ScalarProperty Name="OOH_Traffic_Id" ColumnName="OOH_Traffic_Id" />
+          <ScalarProperty Name="Broadcast_Traffic_Id" ColumnName="Broadcast_Traffic_Id" />
+          <ScalarProperty Name="Print_Bill_Id" ColumnName="Print_Bill_Id" />
+          <ScalarProperty Name="OOH_Bill_Id" ColumnName="OOH_Bill_Id" />
+          <ScalarProperty Name="National_Bill_Id" ColumnName="National_Bill_Id" />
+          <ScalarProperty Name="Digital_Bill_Id" ColumnName="Digital_Bill_Id" />
+          <ScalarProperty Name="Scenario_Name" ColumnName="Scenario_Name" />
+          <ScalarProperty Name="Scenario_Id" ColumnName="Scenario_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Businesses">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Business">
+        <MappingFragment StoreEntitySet="Business">
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Client" ColumnName="Client" />
+          <ScalarProperty Name="Pitched_Successful" ColumnName="Pitched_Successful" />
+          <ScalarProperty Name="Date_Created" ColumnName="Date_Created" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Business_Status">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Business_Status">
+        <MappingFragment StoreEntitySet="Business_Status">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Business_Type">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Business_Type">
+        <MappingFragment StoreEntitySet="Business_Type">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client_Operations_lk">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Client_Operations_lk">
+        <MappingFragment StoreEntitySet="Client_Operations_lk">
+          <ScalarProperty Name="Associate" ColumnName="Associate" />
+          <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+          <ScalarProperty Name="Associate_Director" ColumnName="Associate_Director" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Customized_Reporting" ColumnName="Customized_Reporting" />
+          <ScalarProperty Name="Dashboards" ColumnName="Dashboards" />
+          <ScalarProperty Name="Mgmt_Of_Cross_Practice_Tasks" ColumnName="Mgmt_Of_Cross_Practice_Tasks" />
+          <ScalarProperty Name="PL_Support" ColumnName="PL_Support" />
+          <ScalarProperty Name="TOPS_In_House_Consultancy" ColumnName="TOPS_In_House_Consultancy" />
+          <ScalarProperty Name="Modeling_Data_Pulls" ColumnName="Modeling_Data_Pulls" />
+          <ScalarProperty Name="Global_Support" ColumnName="Global_Support" />
+          <ScalarProperty Name="Additional_Templatized_Reporting" ColumnName="Additional_Templatized_Reporting" />
+          <ScalarProperty Name="Brands_And_Clients" ColumnName="Brands_And_Clients" />
+          <ScalarProperty Name="Additional_Competitive" ColumnName="Additional_Competitive" />
+          <ScalarProperty Name="Media_Landscape_Support" ColumnName="Media_Landscape_Support" />
+          <ScalarProperty Name="Customized_RACI" ColumnName="Customized_RACI" />
+          <ScalarProperty Name="Finance_Support" ColumnName="Finance_Support" />
+          <ScalarProperty Name="Onboarding" ColumnName="Onboarding" />
+          <ScalarProperty Name="Basic_Data_Pulls" ColumnName="Basic_Data_Pulls" />
+          <ScalarProperty Name="Systems_Administration" ColumnName="Systems_Administration" />
+          <ScalarProperty Name="Authorizations" ColumnName="Authorizations" />
+          <ScalarProperty Name="Audit_Requests" ColumnName="Audit_Requests" />
+          <ScalarProperty Name="Basic_Competitive" ColumnName="Basic_Competitive" />
+          <ScalarProperty Name="Budget_Reporting" ColumnName="Budget_Reporting" />
+          <ScalarProperty Name="Draft_Billing" ColumnName="Draft_Billing" />
+          <ScalarProperty Name="Service_Level" ColumnName="Service_Level" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client_Operations_Scenarios">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Client_Operations_Scenarios">
+        <MappingFragment StoreEntitySet="Client_Operations_Scenarios">
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Scenario_Name" ColumnName="Scenario_Name" />
+          <ScalarProperty Name="Is_Final" ColumnName="Is_Final" />
+          <ScalarProperty Name="Business_Id" ColumnName="Business_Id" />
+          <ScalarProperty Name="Client_Operations_Id" ColumnName="Client_Operations_Id" />
+          <ScalarProperty Name="Scenario_Id" ColumnName="Scenario_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Negotiated_And_Approved_Version">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Negotiated_And_Approved_Version">
+        <MappingFragment StoreEntitySet="Negotiated_And_Approved_Version">
+          <ScalarProperty Name="Approved_On" ColumnName="Approved_On" />
+          <ScalarProperty Name="Approved_By" ColumnName="Approved_By" />
+          <ScalarProperty Name="Business_Id" ColumnName="Business_Id" />
+          <ScalarProperty Name="Lead_Liaison" ColumnName="Lead_Liaison" />
+          <ScalarProperty Name="Liaison" ColumnName="Liaison" />
+          <ScalarProperty Name="Associate" ColumnName="Associate" />
+          <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+          <ScalarProperty Name="Assistant_Director" ColumnName="Assistant_Director" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Platform_Operations_Digital_lk">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Platform_Operations_Digital_lk">
+        <MappingFragment StoreEntitySet="Platform_Operations_Digital_lk">
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Assistant_Director" ColumnName="Assistant_Director" />
+          <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+          <ScalarProperty Name="Associate" ColumnName="Associate" />
+          <ScalarProperty Name="NET_Billings" ColumnName="NET_Billings" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Platform_Operations_Digital_Scenarios">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Platform_Operations_Digital_Scenarios">
+        <MappingFragment StoreEntitySet="Platform_Operations_Digital_Scenarios">
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Scenario_Name" ColumnName="Scenario_Name" />
+          <ScalarProperty Name="Is_Final" ColumnName="Is_Final" />
+          <ScalarProperty Name="Digital_Id" ColumnName="Digital_Id" />
+          <ScalarProperty Name="Business_Id" ColumnName="Business_Id" />
+          <ScalarProperty Name="Scenario_Id" ColumnName="Scenario_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Platform_Operations_Local_lk">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Platform_Operations_Local_lk">
+        <MappingFragment StoreEntitySet="Platform_Operations_Local_lk">
+          <ScalarProperty Name="Local_FTE_Multiplier" ColumnName="Local_FTE_Multiplier" />
+          <ScalarProperty Name="FTE_Position" ColumnName="FTE_Position" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Platform_Operations_OOH_lk">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Platform_Operations_OOH_lk">
+        <MappingFragment StoreEntitySet="Platform_Operations_OOH_lk">
+          <ScalarProperty Name="OOH_FTE_Multiplier" ColumnName="OOH_FTE_Multiplier" />
+          <ScalarProperty Name="FTE_Position" ColumnName="FTE_Position" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Platform_Operations_Publishing_lk">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Platform_Operations_Publishing_lk">
+        <MappingFragment StoreEntitySet="Platform_Operations_Publishing_lk">
+          <ScalarProperty Name="Publishing_FTE_Multiplier" ColumnName="Publishing_FTE_Multiplier" />
+          <ScalarProperty Name="FTE_Position" ColumnName="FTE_Position" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Platform_Operations_Video_lk">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Platform_Operations_Video_lk">
+        <MappingFragment StoreEntitySet="Platform_Operations_Video_lk">
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Associate_Director" ColumnName="Associate_Director" />
+          <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+          <ScalarProperty Name="Associate" ColumnName="Associate" />
+          <ScalarProperty Name="NET_Billings" ColumnName="NET_Billings" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Platform_Operations_Video_Scenarios">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Platform_Operations_Video_Scenarios">
+        <MappingFragment StoreEntitySet="Platform_Operations_Video_Scenarios">
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Scenario_Name" ColumnName="Scenario_Name" />
+          <ScalarProperty Name="Is_Final" ColumnName="Is_Final" />
+          <ScalarProperty Name="Business_Id" ColumnName="Business_Id" />
+          <ScalarProperty Name="Video_Id" ColumnName="Video_Id" />
+          <ScalarProperty Name="Scenario_Id" ColumnName="Scenario_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Platform_Ops_Local_Scenarios">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Platform_Ops_Local_Scenarios">
+        <MappingFragment StoreEntitySet="Platform_Ops_Local_Scenarios">
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Is_Final" ColumnName="Is_Final" />
+          <ScalarProperty Name="Business_Id" ColumnName="Business_Id" />
+          <ScalarProperty Name="Scenario_Name" ColumnName="Scenario_Name" />
+          <ScalarProperty Name="Local_FTE" ColumnName="Local_FTE" />
+          <ScalarProperty Name="Gross_Billings" ColumnName="Gross_Billings" />
+          <ScalarProperty Name="Associate" ColumnName="Associate" />
+          <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+          <ScalarProperty Name="Assistant_Director" ColumnName="Assistant_Director" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Scenario_Id" ColumnName="Scenario_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Platform_Ops_OOH_Scenarios">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Platform_Ops_OOH_Scenarios">
+        <MappingFragment StoreEntitySet="Platform_Ops_OOH_Scenarios">
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Is_Final" ColumnName="Is_Final" />
+          <ScalarProperty Name="Business_Id" ColumnName="Business_Id" />
+          <ScalarProperty Name="Scenario_Name" ColumnName="Scenario_Name" />
+          <ScalarProperty Name="NET_Billings" ColumnName="NET_Billings" />
+          <ScalarProperty Name="Associate" ColumnName="Associate" />
+          <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+          <ScalarProperty Name="Assistant_Director" ColumnName="Assistant_Director" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Scenario_Id" ColumnName="Scenario_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Platform_Ops_Publishing_Scenarios">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Platform_Ops_Publishing_Scenarios">
+        <MappingFragment StoreEntitySet="Platform_Ops_Publishing_Scenarios">
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Is_Final" ColumnName="Is_Final" />
+          <ScalarProperty Name="Business_Id" ColumnName="Business_Id" />
+          <ScalarProperty Name="Scenario_Name" ColumnName="Scenario_Name" />
+          <ScalarProperty Name="NET_Billings" ColumnName="NET_Billings" />
+          <ScalarProperty Name="Associate" ColumnName="Associate" />
+          <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+          <ScalarProperty Name="Assistant_Director" ColumnName="Assistant_Director" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Scenario_Id" ColumnName="Scenario_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PM_Duration">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.PM_Duration">
+        <MappingFragment StoreEntitySet="PM_Duration">
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PM_Skills">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.PM_Skills">
+        <MappingFragment StoreEntitySet="PM_Skills">
+          <ScalarProperty Name="Skill_Level" ColumnName="Skill_Level" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_Management_Duration_lk">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Project_Management_Duration_lk">
+        <MappingFragment StoreEntitySet="Project_Management_Duration_lk">
+          <ScalarProperty Name="Service_Level_Id" ColumnName="Service_Level_Id" />
+          <ScalarProperty Name="PM_Duration_Id" ColumnName="PM_Duration_Id" />
+          <ScalarProperty Name="Associate" ColumnName="Associate" />
+          <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+          <ScalarProperty Name="Assistant_Director" ColumnName="Assistant_Director" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_Management_lk">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Project_Management_lk">
+        <MappingFragment StoreEntitySet="Project_Management_lk">
+          <ScalarProperty Name="Service_Level_Id" ColumnName="Service_Level_Id" />
+          <ScalarProperty Name="Tech_Expertise_Id" ColumnName="Tech_Expertise_Id" />
+          <ScalarProperty Name="Project_Visibility_Id" ColumnName="Project_Visibility_Id" />
+          <ScalarProperty Name="PM_Skills_Id" ColumnName="PM_Skills_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_Management_Scenarios">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Project_Management_Scenarios">
+        <MappingFragment StoreEntitySet="Project_Management_Scenarios">
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Scenario_Name" ColumnName="Scenario_Name" />
+          <ScalarProperty Name="Is_Final" ColumnName="Is_Final" />
+          <ScalarProperty Name="Business_Id" ColumnName="Business_Id" />
+          <ScalarProperty Name="Project_Management_Duration_Id" ColumnName="Project_Management_Duration_Id" />
+          <ScalarProperty Name="Project_Management_Id" ColumnName="Project_Management_Id" />
+          <ScalarProperty Name="Scenario_Id" ColumnName="Scenario_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_Visibility">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Project_Visibility">
+        <MappingFragment StoreEntitySet="Project_Visibility">
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Role_Title" ColumnName="Role_Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service_Level">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Service_Level">
+        <MappingFragment StoreEntitySet="Service_Level">
+          <ScalarProperty Name="Service" ColumnName="Service" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAAG_Estimate_and_CPM_lk">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.TAAG_Estimate_and_CPM_lk">
+        <MappingFragment StoreEntitySet="TAAG_Estimate_and_CPM_lk">
+          <ScalarProperty Name="Recommended_CPM" ColumnName="Recommended_CPM" />
+          <ScalarProperty Name="Associate_Tech_Ops" ColumnName="Associate_Tech_Ops" />
+          <ScalarProperty Name="Associate_Analyst" ColumnName="Associate_Analyst" />
+          <ScalarProperty Name="Supervisor_Tech_Ops" ColumnName="Supervisor_Tech_Ops" />
+          <ScalarProperty Name="Supervisor_Analyst" ColumnName="Supervisor_Analyst" />
+          <ScalarProperty Name="Associate_Director" ColumnName="Associate_Director" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Service_Level_Id" ColumnName="Service_Level_Id" />
+          <ScalarProperty Name="Spending" ColumnName="Spending" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAAG_Estimate_and_CPM_Scenarios">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.TAAG_Estimate_and_CPM_Scenarios">
+        <MappingFragment StoreEntitySet="TAAG_Estimate_and_CPM_Scenarios">
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Scenario_Name" ColumnName="Scenario_Name" />
+          <ScalarProperty Name="Is_Final" ColumnName="Is_Final" />
+          <ScalarProperty Name="Business_Id" ColumnName="Business_Id" />
+          <ScalarProperty Name="TAAG_Estimate_and_CPM_Id" ColumnName="TAAG_Estimate_and_CPM_Id" />
+          <ScalarProperty Name="Scenario_Id" ColumnName="Scenario_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tech_Expertise">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.Tech_Expertise">
+        <MappingFragment StoreEntitySet="Tech_Expertise">
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Info">
+      <EntityTypeMapping TypeName="LOSEntitiesDataModel.User_Info">
+        <MappingFragment StoreEntitySet="User_Info">
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,1170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LOSEntitiesDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bill_Pay">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Bill_Pay_Traffic_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bill_Pay_Id" Type="int" />
+    <Property Name="Spending" Type="varchar" MaxLength="50" />
+    <Property Name="Director" Type="float" />
+    <Property Name="Assistant_Director" Type="float" />
+    <Property Name="Liaison" Type="float" />
+    <Property Name="Lead_Liaison" Type="float" />
+    <Property Name="Service_Level_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Bill_Pay_Traffic_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Scenario_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Digital_Bill_Id" Type="int" />
+    <Property Name="National_Bill_Id" Type="int" />
+    <Property Name="OOH_Bill_Id" Type="int" />
+    <Property Name="Print_Bill_Id" Type="int" />
+    <Property Name="Broadcast_Traffic_Id" Type="int" />
+    <Property Name="OOH_Traffic_Id" Type="int" />
+    <Property Name="Business_Id" Type="int" />
+    <Property Name="Is_Final" Type="bit" />
+    <Property Name="Created_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Business">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Year" Type="int" />
+    <Property Name="Date_Created" Type="date" />
+    <Property Name="Pitched_Successful" Type="varchar" MaxLength="50" />
+    <Property Name="Client" Type="int" />
+    <Property Name="Created_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Business_Status">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Business_Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client_Operations_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Service_Level" Type="varchar" MaxLength="50" />
+    <Property Name="Draft_Billing" Type="varchar" MaxLength="50" />
+    <Property Name="Budget_Reporting" Type="varchar" MaxLength="50" />
+    <Property Name="Basic_Competitive" Type="varchar" MaxLength="50" />
+    <Property Name="Audit_Requests" Type="varchar" MaxLength="50" />
+    <Property Name="Authorizations" Type="varchar" MaxLength="50" />
+    <Property Name="Systems_Administration" Type="varchar" MaxLength="50" />
+    <Property Name="Basic_Data_Pulls" Type="varchar" MaxLength="50" />
+    <Property Name="Onboarding" Type="varchar" MaxLength="50" />
+    <Property Name="Finance_Support" Type="varchar" MaxLength="50" />
+    <Property Name="Customized_RACI" Type="varchar" MaxLength="50" />
+    <Property Name="Media_Landscape_Support" Type="varchar" MaxLength="50" />
+    <Property Name="Additional_Competitive" Type="varchar" MaxLength="50" />
+    <Property Name="Brands_And_Clients" Type="varchar" MaxLength="50" />
+    <Property Name="Additional_Templatized_Reporting" Type="varchar" MaxLength="50" />
+    <Property Name="Global_Support" Type="varchar" MaxLength="50" />
+    <Property Name="Modeling_Data_Pulls" Type="varchar" MaxLength="50" />
+    <Property Name="TOPS_In_House_Consultancy" Type="varchar" MaxLength="50" />
+    <Property Name="PL_Support" Type="varchar" MaxLength="50" />
+    <Property Name="Mgmt_Of_Cross_Practice_Tasks" Type="varchar" MaxLength="50" />
+    <Property Name="Dashboards" Type="varchar" MaxLength="50" />
+    <Property Name="Customized_Reporting" Type="varchar" MaxLength="50" />
+    <Property Name="Director" Type="float" />
+    <Property Name="Associate_Director" Type="float" />
+    <Property Name="Supervisor" Type="float" />
+    <Property Name="Associate" Type="float" />
+  </EntityType>
+  <EntityType Name="Client_Operations_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Client_Operations_Id" Type="int" />
+    <Property Name="Business_Id" Type="int" />
+    <Property Name="Is_Final" Type="bit" />
+    <Property Name="Scenario_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Created_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Negotiated_And_Approved_Version">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Department_Id" Type="int" />
+    <Property Name="Director" Type="float" />
+    <Property Name="Assistant_Director" Type="float" />
+    <Property Name="Supervisor" Type="float" />
+    <Property Name="Associate" Type="float" />
+    <Property Name="Liaison" Type="float" />
+    <Property Name="Lead_Liaison" Type="float" />
+    <Property Name="Business_Id" Type="int" />
+    <Property Name="Approved_By" Type="int" />
+    <Property Name="Approved_On" Type="date" />
+  </EntityType>
+  <EntityType Name="Platform_Operations_Digital_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NET_Billings" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Associate" Type="float" Nullable="false" />
+    <Property Name="Supervisor" Type="float" Nullable="false" />
+    <Property Name="Assistant_Director" Type="float" Nullable="false" />
+    <Property Name="Director" Type="float" />
+  </EntityType>
+  <EntityType Name="Platform_Operations_Digital_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Business_Id" Type="int" />
+    <Property Name="Digital_Id" Type="int" />
+    <Property Name="Is_Final" Type="bit" />
+    <Property Name="Scenario_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Created_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Platform_Operations_Local_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FTE_Position" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Local_FTE_Multiplier" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Platform_Operations_OOH_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FTE_Position" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="OOH_FTE_Multiplier" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Platform_Operations_Publishing_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FTE_Position" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Publishing_FTE_Multiplier" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Platform_Operations_Video_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NET_Billings" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Associate" Type="float" Nullable="false" />
+    <Property Name="Supervisor" Type="float" Nullable="false" />
+    <Property Name="Associate_Director" Type="float" Nullable="false" />
+    <Property Name="Director" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Platform_Operations_Video_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Video_Id" Type="int" />
+    <Property Name="Business_Id" Type="int" />
+    <Property Name="Is_Final" Type="bit" />
+    <Property Name="Scenario_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Created_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Platform_Ops_Local_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Director" Type="float" />
+    <Property Name="Assistant_Director" Type="float" />
+    <Property Name="Supervisor" Type="float" />
+    <Property Name="Associate" Type="float" />
+    <Property Name="Gross_Billings" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Local_FTE" Type="float" />
+    <Property Name="Scenario_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Business_Id" Type="int" />
+    <Property Name="Is_Final" Type="bit" />
+    <Property Name="Created_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Platform_Ops_OOH_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Director" Type="float" />
+    <Property Name="Assistant_Director" Type="float" />
+    <Property Name="Supervisor" Type="float" />
+    <Property Name="Associate" Type="float" />
+    <Property Name="NET_Billings" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Scenario_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Business_Id" Type="int" />
+    <Property Name="Is_Final" Type="bit" />
+    <Property Name="Created_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Platform_Ops_Publishing_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Director" Type="float" />
+    <Property Name="Assistant_Director" Type="float" />
+    <Property Name="Supervisor" Type="float" />
+    <Property Name="Associate" Type="float" />
+    <Property Name="NET_Billings" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Scenario_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Business_Id" Type="int" />
+    <Property Name="Is_Final" Type="bit" />
+    <Property Name="Created_By" Type="int" />
+  </EntityType>
+  <EntityType Name="PM_Duration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Duration" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PM_Skills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Skill_Level" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Project_Management_Duration_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Director" Type="float" />
+    <Property Name="Assistant_Director" Type="float" />
+    <Property Name="Supervisor" Type="float" />
+    <Property Name="Associate" Type="float" />
+    <Property Name="PM_Duration_Id" Type="int" />
+    <Property Name="Service_Level_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Project_Management_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PM_Skills_Id" Type="int" />
+    <Property Name="Project_Visibility_Id" Type="int" />
+    <Property Name="Tech_Expertise_Id" Type="int" />
+    <Property Name="Service_Level_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Project_Management_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Project_Management_Id" Type="int" />
+    <Property Name="Project_Management_Duration_Id" Type="int" />
+    <Property Name="Business_Id" Type="int" />
+    <Property Name="Is_Final" Type="bit" />
+    <Property Name="Scenario_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Created_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Project_Visibility">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Level" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role_Title" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Service_Level">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Service" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TAAG_Estimate_and_CPM_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Spending" Type="varchar" MaxLength="50" />
+    <Property Name="Service_Level_Id" Type="int" />
+    <Property Name="Director" Type="float" />
+    <Property Name="Associate_Director" Type="float" />
+    <Property Name="Supervisor_Analyst" Type="float" />
+    <Property Name="Supervisor_Tech_Ops" Type="float" />
+    <Property Name="Associate_Analyst" Type="float" />
+    <Property Name="Associate_Tech_Ops" Type="float" />
+    <Property Name="Recommended_CPM" Type="float" />
+  </EntityType>
+  <EntityType Name="TAAG_Estimate_and_CPM_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TAAG_Estimate_and_CPM_Id" Type="int" />
+    <Property Name="Business_Id" Type="int" />
+    <Property Name="Is_Final" Type="bit" />
+    <Property Name="Scenario_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Created_By" Type="int" />
+  </EntityType>
+  <EntityType Name="Tech_Expertise">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Level" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User_Info">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="ClientId" Type="int" />
+  </EntityType>
+  <Association Name="FK_Bill_Pay_Traffic_lk_Bill_Pay">
+    <End Role="Bill_Pay" Type="Self.Bill_Pay" Multiplicity="0..1" />
+    <End Role="Bill_Pay_Traffic_lk" Type="Self.Bill_Pay_Traffic_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Pay">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Bill_Pay_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_lk_Service_Level">
+    <End Role="Service_Level" Type="Self.Service_Level" Multiplicity="0..1" />
+    <End Role="Bill_Pay_Traffic_lk" Type="Self.Bill_Pay_Traffic_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service_Level">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Service_Level_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk">
+    <End Role="Bill_Pay_Traffic_lk" Type="Self.Bill_Pay_Traffic_lk" Multiplicity="0..1" />
+    <End Role="Bill_Pay_Traffic_Scenarios" Type="Self.Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="Digital_Bill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk1">
+    <End Role="Bill_Pay_Traffic_lk" Type="Self.Bill_Pay_Traffic_lk" Multiplicity="0..1" />
+    <End Role="Bill_Pay_Traffic_Scenarios" Type="Self.Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="National_Bill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk2">
+    <End Role="Bill_Pay_Traffic_lk" Type="Self.Bill_Pay_Traffic_lk" Multiplicity="0..1" />
+    <End Role="Bill_Pay_Traffic_Scenarios" Type="Self.Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="OOH_Bill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk3">
+    <End Role="Bill_Pay_Traffic_lk" Type="Self.Bill_Pay_Traffic_lk" Multiplicity="0..1" />
+    <End Role="Bill_Pay_Traffic_Scenarios" Type="Self.Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="Print_Bill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk4">
+    <End Role="Bill_Pay_Traffic_lk" Type="Self.Bill_Pay_Traffic_lk" Multiplicity="0..1" />
+    <End Role="Bill_Pay_Traffic_Scenarios" Type="Self.Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="Broadcast_Traffic_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk5">
+    <End Role="Bill_Pay_Traffic_lk" Type="Self.Bill_Pay_Traffic_lk" Multiplicity="0..1" />
+    <End Role="Bill_Pay_Traffic_Scenarios" Type="Self.Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="OOH_Traffic_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_Business">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="Bill_Pay_Traffic_Scenarios" Type="Self.Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="0..1" />
+    <End Role="Bill_Pay_Traffic_Scenarios" Type="Self.Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Business_Business_Status">
+    <End Role="Business_Status" Type="Self.Business_Status" Multiplicity="0..1" />
+    <End Role="Business" Type="Self.Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business_Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Business">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Business_Business_Type">
+    <End Role="Business_Type" Type="Self.Business_Type" Multiplicity="0..1" />
+    <End Role="Business" Type="Self.Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business_Type">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Business">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Business_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Business" Type="Self.Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Business">
+        <PropertyRef Name="Client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Business_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="0..1" />
+    <End Role="Business" Type="Self.Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Business">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_Operations_Scenarios_Business">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="Client_Operations_Scenarios" Type="Self.Client_Operations_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client_Operations_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_Operations_Scenarios_Client_Operations_lk">
+    <End Role="Client_Operations_lk" Type="Self.Client_Operations_lk" Multiplicity="0..1" />
+    <End Role="Client_Operations_Scenarios" Type="Self.Client_Operations_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client_Operations_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client_Operations_Scenarios">
+        <PropertyRef Name="Client_Operations_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_Operations_Scenarios_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="0..1" />
+    <End Role="Client_Operations_Scenarios" Type="Self.Client_Operations_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client_Operations_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Negotiated_And_Approved_Version_Business">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="Negotiated_And_Approved_Version" Type="Self.Negotiated_And_Approved_Version" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Negotiated_And_Approved_Version">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Negotiated_And_Approved_Version_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Negotiated_And_Approved_Version" Type="Self.Negotiated_And_Approved_Version" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Negotiated_And_Approved_Version">
+        <PropertyRef Name="Department_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Negotiated_And_Approved_Version_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="0..1" />
+    <End Role="Negotiated_And_Approved_Version" Type="Self.Negotiated_And_Approved_Version" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Negotiated_And_Approved_Version">
+        <PropertyRef Name="Approved_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Operations_Digital_Scenarios_Business">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="Platform_Operations_Digital_Scenarios" Type="Self.Platform_Operations_Digital_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Operations_Digital_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Operations_Digital_Scenarios_Platform_Operations_Digital_lk">
+    <End Role="Platform_Operations_Digital_lk" Type="Self.Platform_Operations_Digital_lk" Multiplicity="0..1" />
+    <End Role="Platform_Operations_Digital_Scenarios" Type="Self.Platform_Operations_Digital_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Platform_Operations_Digital_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Operations_Digital_Scenarios">
+        <PropertyRef Name="Digital_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Operations_Digital_Scenarios_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="0..1" />
+    <End Role="Platform_Operations_Digital_Scenarios" Type="Self.Platform_Operations_Digital_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Operations_Digital_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Operations_Video_Scenarios_Business">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="Platform_Operations_Video_Scenarios" Type="Self.Platform_Operations_Video_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Operations_Video_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Operations_Video_Scenarios_Platform_Operations_Video_lk">
+    <End Role="Platform_Operations_Video_lk" Type="Self.Platform_Operations_Video_lk" Multiplicity="0..1" />
+    <End Role="Platform_Operations_Video_Scenarios" Type="Self.Platform_Operations_Video_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Platform_Operations_Video_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Operations_Video_Scenarios">
+        <PropertyRef Name="Video_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Operations_Video_Scenarios_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="0..1" />
+    <End Role="Platform_Operations_Video_Scenarios" Type="Self.Platform_Operations_Video_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Operations_Video_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Ops_Local_Scenarios_Business">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="Platform_Ops_Local_Scenarios" Type="Self.Platform_Ops_Local_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Ops_Local_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Ops_Local_Scenarios_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="0..1" />
+    <End Role="Platform_Ops_Local_Scenarios" Type="Self.Platform_Ops_Local_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Ops_Local_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Ops_OOH_Scenarios_Business">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="Platform_Ops_OOH_Scenarios" Type="Self.Platform_Ops_OOH_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Ops_OOH_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Ops_OOH_Scenarios_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="0..1" />
+    <End Role="Platform_Ops_OOH_Scenarios" Type="Self.Platform_Ops_OOH_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Ops_OOH_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Ops_Publishing_Scenarios_Business">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="Platform_Ops_Publishing_Scenarios" Type="Self.Platform_Ops_Publishing_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Ops_Publishing_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Ops_Publishing_Scenarios_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="0..1" />
+    <End Role="Platform_Ops_Publishing_Scenarios" Type="Self.Platform_Ops_Publishing_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Ops_Publishing_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_Duration_lk_Service_Level">
+    <End Role="Service_Level" Type="Self.Service_Level" Multiplicity="0..1" />
+    <End Role="Project_Management_Duration_lk" Type="Self.Project_Management_Duration_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service_Level">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_Duration_lk">
+        <PropertyRef Name="Service_Level_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_lk_PM_Skills">
+    <End Role="PM_Skills" Type="Self.PM_Skills" Multiplicity="0..1" />
+    <End Role="Project_Management_lk" Type="Self.Project_Management_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PM_Skills">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_lk">
+        <PropertyRef Name="PM_Skills_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_lk_Project_Visibility">
+    <End Role="Project_Visibility" Type="Self.Project_Visibility" Multiplicity="0..1" />
+    <End Role="Project_Management_lk" Type="Self.Project_Management_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project_Visibility">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_lk">
+        <PropertyRef Name="Project_Visibility_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_lk_Service_Level">
+    <End Role="Service_Level" Type="Self.Service_Level" Multiplicity="0..1" />
+    <End Role="Project_Management_lk" Type="Self.Project_Management_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service_Level">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_lk">
+        <PropertyRef Name="Service_Level_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_lk_Tech_Expertise">
+    <End Role="Tech_Expertise" Type="Self.Tech_Expertise" Multiplicity="0..1" />
+    <End Role="Project_Management_lk" Type="Self.Project_Management_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tech_Expertise">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_lk">
+        <PropertyRef Name="Tech_Expertise_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_Scenarios_Business">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="Project_Management_Scenarios" Type="Self.Project_Management_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_Scenarios_Project_Management_Duration_lk">
+    <End Role="Project_Management_Duration_lk" Type="Self.Project_Management_Duration_lk" Multiplicity="0..1" />
+    <End Role="Project_Management_Scenarios" Type="Self.Project_Management_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project_Management_Duration_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_Scenarios">
+        <PropertyRef Name="Project_Management_Duration_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_Scenarios_Project_Management_lk">
+    <End Role="Project_Management_lk" Type="Self.Project_Management_lk" Multiplicity="0..1" />
+    <End Role="Project_Management_Scenarios" Type="Self.Project_Management_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project_Management_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_Scenarios">
+        <PropertyRef Name="Project_Management_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_Scenarios_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="0..1" />
+    <End Role="Project_Management_Scenarios" Type="Self.Project_Management_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAAG_Estimate_and_CPM_lk_Service_Level">
+    <End Role="Service_Level" Type="Self.Service_Level" Multiplicity="0..1" />
+    <End Role="TAAG_Estimate_and_CPM_lk" Type="Self.TAAG_Estimate_and_CPM_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service_Level">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TAAG_Estimate_and_CPM_lk">
+        <PropertyRef Name="Service_Level_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAAG_Estimate_and_CPM_Scenarios_Business">
+    <End Role="Business" Type="Self.Business" Multiplicity="0..1" />
+    <End Role="TAAG_Estimate_and_CPM_Scenarios" Type="Self.TAAG_Estimate_and_CPM_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TAAG_Estimate_and_CPM_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAAG_Estimate_and_CPM_Scenarios_TAAG_Estimate_and_CPM_lk">
+    <End Role="TAAG_Estimate_and_CPM_lk" Type="Self.TAAG_Estimate_and_CPM_lk" Multiplicity="0..1" />
+    <End Role="TAAG_Estimate_and_CPM_Scenarios" Type="Self.TAAG_Estimate_and_CPM_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAAG_Estimate_and_CPM_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TAAG_Estimate_and_CPM_Scenarios">
+        <PropertyRef Name="TAAG_Estimate_and_CPM_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAAG_Estimate_and_CPM_Scenarios_User_Info">
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="0..1" />
+    <End Role="TAAG_Estimate_and_CPM_Scenarios" Type="Self.TAAG_Estimate_and_CPM_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TAAG_Estimate_and_CPM_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Info_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Info">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Info_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Info">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Info_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User_Info" Type="Self.User_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Info">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LOSEntitiesDataModelStoreContainer">
+    <EntitySet Name="Bill_Pay" EntityType="Self.Bill_Pay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bill_Pay_Traffic_lk" EntityType="Self.Bill_Pay_Traffic_lk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bill_Pay_Traffic_Scenarios" EntityType="Self.Bill_Pay_Traffic_Scenarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Business" EntityType="Self.Business" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Business_Status" EntityType="Self.Business_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Business_Type" EntityType="Self.Business_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client_Operations_lk" EntityType="Self.Client_Operations_lk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client_Operations_Scenarios" EntityType="Self.Client_Operations_Scenarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Negotiated_And_Approved_Version" EntityType="Self.Negotiated_And_Approved_Version" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Platform_Operations_Digital_lk" EntityType="Self.Platform_Operations_Digital_lk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Platform_Operations_Digital_Scenarios" EntityType="Self.Platform_Operations_Digital_Scenarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Platform_Operations_Local_lk" EntityType="Self.Platform_Operations_Local_lk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Platform_Operations_OOH_lk" EntityType="Self.Platform_Operations_OOH_lk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Platform_Operations_Publishing_lk" EntityType="Self.Platform_Operations_Publishing_lk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Platform_Operations_Video_lk" EntityType="Self.Platform_Operations_Video_lk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Platform_Operations_Video_Scenarios" EntityType="Self.Platform_Operations_Video_Scenarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Platform_Ops_Local_Scenarios" EntityType="Self.Platform_Ops_Local_Scenarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Platform_Ops_OOH_Scenarios" EntityType="Self.Platform_Ops_OOH_Scenarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Platform_Ops_Publishing_Scenarios" EntityType="Self.Platform_Ops_Publishing_Scenarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PM_Duration" EntityType="Self.PM_Duration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PM_Skills" EntityType="Self.PM_Skills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project_Management_Duration_lk" EntityType="Self.Project_Management_Duration_lk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project_Management_lk" EntityType="Self.Project_Management_lk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project_Management_Scenarios" EntityType="Self.Project_Management_Scenarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project_Visibility" EntityType="Self.Project_Visibility" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service_Level" EntityType="Self.Service_Level" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAAG_Estimate_and_CPM_lk" EntityType="Self.TAAG_Estimate_and_CPM_lk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAAG_Estimate_and_CPM_Scenarios" EntityType="Self.TAAG_Estimate_and_CPM_Scenarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tech_Expertise" EntityType="Self.Tech_Expertise" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Info" EntityType="Self.User_Info" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Bill_Pay_Traffic_lk_Bill_Pay" Association="Self.FK_Bill_Pay_Traffic_lk_Bill_Pay">
+      <End Role="Bill_Pay" EntitySet="Bill_Pay" />
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_lk_Service_Level" Association="Self.FK_Bill_Pay_Traffic_lk_Service_Level">
+      <End Role="Service_Level" EntitySet="Service_Level" />
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk" Association="Self.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk">
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk1" Association="Self.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk1">
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk2" Association="Self.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk2">
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk3" Association="Self.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk3">
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk4" Association="Self.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk4">
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk5" Association="Self.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk5">
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_Business" Association="Self.FK_Bill_Pay_Traffic_Scenarios_Business">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_User_Info" Association="Self.FK_Bill_Pay_Traffic_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Business_Business_Status" Association="Self.FK_Business_Business_Status">
+      <End Role="Business_Status" EntitySet="Business_Status" />
+      <End Role="Business" EntitySet="Business" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Business_Business_Type" Association="Self.FK_Business_Business_Type">
+      <End Role="Business_Type" EntitySet="Business_Type" />
+      <End Role="Business" EntitySet="Business" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Business_Client" Association="Self.FK_Business_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Business" EntitySet="Business" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Business_User_Info" Association="Self.FK_Business_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Business" EntitySet="Business" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Operations_Scenarios_Business" Association="Self.FK_Client_Operations_Scenarios_Business">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Client_Operations_Scenarios" EntitySet="Client_Operations_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Operations_Scenarios_Client_Operations_lk" Association="Self.FK_Client_Operations_Scenarios_Client_Operations_lk">
+      <End Role="Client_Operations_lk" EntitySet="Client_Operations_lk" />
+      <End Role="Client_Operations_Scenarios" EntitySet="Client_Operations_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Operations_Scenarios_User_Info" Association="Self.FK_Client_Operations_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Client_Operations_Scenarios" EntitySet="Client_Operations_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Negotiated_And_Approved_Version_Business" Association="Self.FK_Negotiated_And_Approved_Version_Business">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Negotiated_And_Approved_Version" EntitySet="Negotiated_And_Approved_Version" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Negotiated_And_Approved_Version_Department" Association="Self.FK_Negotiated_And_Approved_Version_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Negotiated_And_Approved_Version" EntitySet="Negotiated_And_Approved_Version" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Negotiated_And_Approved_Version_User_Info" Association="Self.FK_Negotiated_And_Approved_Version_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Negotiated_And_Approved_Version" EntitySet="Negotiated_And_Approved_Version" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Operations_Digital_Scenarios_Business" Association="Self.FK_Platform_Operations_Digital_Scenarios_Business">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Platform_Operations_Digital_Scenarios" EntitySet="Platform_Operations_Digital_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Operations_Digital_Scenarios_Platform_Operations_Digital_lk" Association="Self.FK_Platform_Operations_Digital_Scenarios_Platform_Operations_Digital_lk">
+      <End Role="Platform_Operations_Digital_lk" EntitySet="Platform_Operations_Digital_lk" />
+      <End Role="Platform_Operations_Digital_Scenarios" EntitySet="Platform_Operations_Digital_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Operations_Digital_Scenarios_User_Info" Association="Self.FK_Platform_Operations_Digital_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Platform_Operations_Digital_Scenarios" EntitySet="Platform_Operations_Digital_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Operations_Video_Scenarios_Business" Association="Self.FK_Platform_Operations_Video_Scenarios_Business">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Platform_Operations_Video_Scenarios" EntitySet="Platform_Operations_Video_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Operations_Video_Scenarios_Platform_Operations_Video_lk" Association="Self.FK_Platform_Operations_Video_Scenarios_Platform_Operations_Video_lk">
+      <End Role="Platform_Operations_Video_lk" EntitySet="Platform_Operations_Video_lk" />
+      <End Role="Platform_Operations_Video_Scenarios" EntitySet="Platform_Operations_Video_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Operations_Video_Scenarios_User_Info" Association="Self.FK_Platform_Operations_Video_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Platform_Operations_Video_Scenarios" EntitySet="Platform_Operations_Video_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Ops_Local_Scenarios_Business" Association="Self.FK_Platform_Ops_Local_Scenarios_Business">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Platform_Ops_Local_Scenarios" EntitySet="Platform_Ops_Local_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Ops_Local_Scenarios_User_Info" Association="Self.FK_Platform_Ops_Local_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Platform_Ops_Local_Scenarios" EntitySet="Platform_Ops_Local_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Ops_OOH_Scenarios_Business" Association="Self.FK_Platform_Ops_OOH_Scenarios_Business">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Platform_Ops_OOH_Scenarios" EntitySet="Platform_Ops_OOH_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Ops_OOH_Scenarios_User_Info" Association="Self.FK_Platform_Ops_OOH_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Platform_Ops_OOH_Scenarios" EntitySet="Platform_Ops_OOH_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Ops_Publishing_Scenarios_Business" Association="Self.FK_Platform_Ops_Publishing_Scenarios_Business">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Platform_Ops_Publishing_Scenarios" EntitySet="Platform_Ops_Publishing_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Ops_Publishing_Scenarios_User_Info" Association="Self.FK_Platform_Ops_Publishing_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Platform_Ops_Publishing_Scenarios" EntitySet="Platform_Ops_Publishing_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_Duration_lk_Service_Level" Association="Self.FK_Project_Management_Duration_lk_Service_Level">
+      <End Role="Service_Level" EntitySet="Service_Level" />
+      <End Role="Project_Management_Duration_lk" EntitySet="Project_Management_Duration_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_lk_PM_Skills" Association="Self.FK_Project_Management_lk_PM_Skills">
+      <End Role="PM_Skills" EntitySet="PM_Skills" />
+      <End Role="Project_Management_lk" EntitySet="Project_Management_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_lk_Project_Visibility" Association="Self.FK_Project_Management_lk_Project_Visibility">
+      <End Role="Project_Visibility" EntitySet="Project_Visibility" />
+      <End Role="Project_Management_lk" EntitySet="Project_Management_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_lk_Service_Level" Association="Self.FK_Project_Management_lk_Service_Level">
+      <End Role="Service_Level" EntitySet="Service_Level" />
+      <End Role="Project_Management_lk" EntitySet="Project_Management_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_lk_Tech_Expertise" Association="Self.FK_Project_Management_lk_Tech_Expertise">
+      <End Role="Tech_Expertise" EntitySet="Tech_Expertise" />
+      <End Role="Project_Management_lk" EntitySet="Project_Management_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_Scenarios_Business" Association="Self.FK_Project_Management_Scenarios_Business">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="Project_Management_Scenarios" EntitySet="Project_Management_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_Scenarios_Project_Management_Duration_lk" Association="Self.FK_Project_Management_Scenarios_Project_Management_Duration_lk">
+      <End Role="Project_Management_Duration_lk" EntitySet="Project_Management_Duration_lk" />
+      <End Role="Project_Management_Scenarios" EntitySet="Project_Management_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_Scenarios_Project_Management_lk" Association="Self.FK_Project_Management_Scenarios_Project_Management_lk">
+      <End Role="Project_Management_lk" EntitySet="Project_Management_lk" />
+      <End Role="Project_Management_Scenarios" EntitySet="Project_Management_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_Scenarios_User_Info" Association="Self.FK_Project_Management_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Project_Management_Scenarios" EntitySet="Project_Management_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAAG_Estimate_and_CPM_lk_Service_Level" Association="Self.FK_TAAG_Estimate_and_CPM_lk_Service_Level">
+      <End Role="Service_Level" EntitySet="Service_Level" />
+      <End Role="TAAG_Estimate_and_CPM_lk" EntitySet="TAAG_Estimate_and_CPM_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAAG_Estimate_and_CPM_Scenarios_Business" Association="Self.FK_TAAG_Estimate_and_CPM_Scenarios_Business">
+      <End Role="Business" EntitySet="Business" />
+      <End Role="TAAG_Estimate_and_CPM_Scenarios" EntitySet="TAAG_Estimate_and_CPM_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAAG_Estimate_and_CPM_Scenarios_TAAG_Estimate_and_CPM_lk" Association="Self.FK_TAAG_Estimate_and_CPM_Scenarios_TAAG_Estimate_and_CPM_lk">
+      <End Role="TAAG_Estimate_and_CPM_lk" EntitySet="TAAG_Estimate_and_CPM_lk" />
+      <End Role="TAAG_Estimate_and_CPM_Scenarios" EntitySet="TAAG_Estimate_and_CPM_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAAG_Estimate_and_CPM_Scenarios_User_Info" Association="Self.FK_TAAG_Estimate_and_CPM_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="TAAG_Estimate_and_CPM_Scenarios" EntitySet="TAAG_Estimate_and_CPM_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Info_Client" Association="Self.FK_User_Info_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="User_Info" EntitySet="User_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Info_Department" Association="Self.FK_User_Info_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="User_Info" EntitySet="User_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Info_Role" Association="Self.FK_User_Info_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User_Info" EntitySet="User_Info" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,72 @@
+﻿@model LOS.Models.Video_Form_Modal
+
+<div class="modal fade" tabindex="-1" role="dialog" id="video-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Platform Operations-Video</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6"><label class="control-label">Provide your approximate NET Billings:</label></div>
+                            <div class="col-sm-4">
+                                <select id="input-video-billings" class="form-control">
+                                    @for (var i = 0; i < @Model.netBillings.Count; i++)
+                                    {
+                                        <option id="input-video-billings-@Model.netBillings[i].Id" value="@Model.netBillings[i].Id">@Model.netBillings[i].Spending</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5"><label for=" " class="control-label">Video Platform FTE Allocation Total: </label></div>
+                            <div class="col-sm-3"><input type="text" class="form-control underline-text" id="platform-video-total" name="" /></div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="platform-video-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Supervisor</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="platform-video-supervisor" name="" />
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Associate Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="platform-video-associate-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Associate</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="platform-video-associate" name="" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

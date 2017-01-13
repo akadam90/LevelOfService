@@ -1,0 +1,583 @@
+﻿@model LOS.Models.Survey_Model
+
+<div class="modal fade" tabindex="-1" role="dialog" id="business_modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Business View</h4>
+                </div>
+
+                <div class="modal-body">
+
+                    <div role="tabpanel">
+                        <ul class="nav nav-tabs" role="tablist" id="bussiness_tabs">
+                            <li role="presentation" class="active"><a href="#submitted" id="submitted-tab" role="tab" data-toggle="tab">Submitted</a></li>
+                            <li role="presentation"><a href="#submitted" role="tab" id="negotiated-tab" data-toggle="tab">Negotiated</a></li>
+                            <li role="presentation"><a href="#submitted" role="tab" id="delta-tab" data-toggle="tab">Delta</a></li>
+                            <li role="presentation"><a href="#survey" role="tab" id="survey-tab" data-toggle="tab">Survey</a></li>
+                        </ul>
+                        <div class="tab-content">
+
+                            <div role="tabpanel" class="tab-pane active" id="submitted"> 
+                                <form class="form-horizontal" id="business-lead-scenario-form" action="">                                    
+                                    <input type="hidden" value="0" id="current-business-id" name="CurrentBusinessId"/>                         
+                                    <div id="accordion" role="tablist" aria-multiselectable="true">
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="bill_pay_traffic_header">
+                                                <h5 class="mb-0">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#bill_pay_traffic_collapse" aria-expanded="true" aria-controls="collapse_bill_pay_traffic">
+                                                        TOTAL BILL/PAY TRAFFIC ALLOCATION
+                                                    </a>
+                                                </h5>
+                                            </div>
+
+                                            <div id="bill_pay_traffic_collapse" class="first panel-collapse collapse in" role="tabpanel" aria-labelledby="bill_pay_traffic_collapse_heading">
+                                                <div class="container"><br/>
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="bill_pay_director" class="pull-right">Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="bill_pay_director" name="bill_pay_director" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="bill_pay_lead_liaison" class="pull-right">Lead Liaison</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="bill_pay_lead_liaison" name="bill_pay_lead_liaison" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group"></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="bill_pay_ass_director" class="pull-right">Associate Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="bill_pay_ass_director" name="bill_pay_ass_director" /></div>
+                                                        </div>
+
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="bill_pay_liaison" class="pull-right">Liaison</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="bill_pay_liaison" name="bill_pay_liaison" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="bill_pay_total" class="pull-right">Total : </label></div>
+                                                            <div class="col-sm-6"><input type="text" id="bill_pay_total" name="bill_pay_total" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>                 
+
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="client_operations_header">
+                                                <h5 class="mb-0">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#client_operations_collapse" aria-expanded="true" aria-controls="collapse_client_operations">
+                                                        TOTAL CLIENT OPERATIONS ALLOCATION
+                                                    </a>
+                                                </h5>
+                                            </div>
+
+                                            <div id="client_operations_collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="client_operations_collapse_heading">
+                                                <div class="container"><br />
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="client_operations_director" class="pull-right">Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="client_operations_director" name="client_operations_director" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="client_operations_supervisor" class="pull-right">Supervisor</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="client_operations_supervisor" name="client_operations_supervisor" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group"></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="client_operations_ass_director" class="pull-right">Associate Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="client_operations_ass_director" name="client_operations_ass_director" /></div>
+                                                        </div>
+
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="client_operations_associate" class="pull-right">Associate</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="client_operations_associate" name="client_operations_associate" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="client_operations_total" class="pull-right">Total : </label></div>
+                                                            <div class="col-sm-6"><input type="text" id="client_operations_total" name="client_operations_total" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="digital_header">
+                                                <h5 class="mb-0">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#digital_collapse" aria-expanded="true" aria-controls="collapse_digital">
+                                                        TOTAL DIGITAL PLATFORM OPERATIONS ALLOCATION
+                                                    </a>
+                                                </h5>
+                                            </div>
+
+                                            <div id="digital_collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="digital_collapse_heading">
+                                                <div class="container"><br />
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="digital_director" class="pull-right">Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="digital_director" name="digital_director" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="digital_supervisor" class="pull-right">Supervisor</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="digital_supervisor" name="digital_supervisor" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group"></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="digital_ass_director" class="pull-right">Associate Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="digital_ass_director" name="digital_ass_director" /></div>
+                                                        </div>
+
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="digital_associate" class="pull-right">Associate</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="digital_associate" name="digital_associate" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="digital_total" class="pull-right">Total : </label></div>
+                                                            <div class="col-sm-6"><input type="text" id="digital_total" name="digital_total" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="local_header">
+                                                <h5 class="mb-0">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#local_collapse" aria-expanded="true" aria-controls="collapse_local">
+                                                        TOTAL LOCAL PLATFORM OPERATIONS ALLOCATION
+                                                    </a>
+                                                </h5>
+                                            </div>
+
+                                            <div id="local_collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="local_collapse_heading">
+                                                <div class="container"><br />
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="local_director" class="pull-right">Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="local_director" name="local_director" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="local_supervisor" class="pull-right">Supervisor</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="local_supervisor" name="local_supervisor" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group"></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="local_ass_director" class="pull-right">Associate Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="local_ass_director" name="local_ass_director" /></div>
+                                                        </div>
+
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="local_associate" class="pull-right">Associate</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="dlocal_associate" name="local_associate" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="local_total" class="pull-right">Total : </label></div>
+                                                            <div class="col-sm-6"><input type="text" id="local_total" name="local_total" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="ooh_header">
+                                                <h5 class="mb-0">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#ooh_collapse" aria-expanded="true" aria-controls="collapse_ooh">
+                                                        TOTAL OOH PLATFORM OPERATIONS ALLOCATION
+                                                    </a>
+                                                </h5>
+                                            </div>
+
+                                            <div id="ooh_collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ooh_collapse_heading">
+                                                <div class="container"><br />
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="ooh_director" class="pull-right">Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="ooh_director" name="ooh_director" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="ooh_supervisor" class="pull-right">Supervisor</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="ooh_supervisor" name="ooh_supervisor" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group"></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="ooh_ass_director" class="pull-right">Associate Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="ooh_ass_director" name="ooh_ass_director" /></div>
+                                                        </div>
+
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="ooh_associate" class="pull-right">Associate</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="dooh_associate" name="ooh_associate" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="ooh_total" class="pull-right">Total : </label></div>
+                                                            <div class="col-sm-6"><input type="text" id="ooh_total" name="ooh_total" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="publishing_header">
+                                                <h5 class="mb-0">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#publishing_collapse" aria-expanded="true" aria-controls="collapse_publishing">
+                                                        TOTAL PUBLISHING PLATFORM OPERATIONS ALLOCATION
+                                                    </a>
+                                                </h5>
+                                            </div>
+
+                                            <div id="publishing_collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="publishing_collapse_heading">
+                                                <div class="container"><br />
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="publishing_director" class="pull-right">Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="publishing_director" name="publishing_director" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="publishing_supervisor" class="pull-right">Supervisor</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="publishing_supervisor" name="publishing_supervisor" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group"></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="publishing_ass_director" class="pull-right">Associate Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="publishing_ass_director" name="publishing_ass_director" /></div>
+                                                        </div>
+
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="publishing_associate" class="pull-right">Associate</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="dpublishing_associate" name="publishing_associate" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="publishing_total" class="pull-right">Total : </label></div>
+                                                            <div class="col-sm-6"><input type="text" id="publishing_total" name="publishing_total" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="video_header">
+                                                <h5 class="mb-0">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#video_collapse" aria-expanded="true" aria-controls="collapse_video">
+                                                        TOTAL VIDEO PLATFORM OPERATIONS ALLOCATION
+                                                    </a>
+                                                </h5>
+                                            </div>
+
+                                            <div id="video_collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="video_collapse_heading">
+                                                <div class="container"><br />
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="video_director" class="pull-right">Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="video_director" name="video_director" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="video_supervisor" class="pull-right">Supervisor</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="video_supervisor" name="video_supervisor" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group"></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="video_ass_director" class="pull-right">Associate Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="video_ass_director" name="video_ass_director" /></div>
+                                                        </div>
+
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="video_associate" class="pull-right">Associate</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="dvideo_associate" name="video_associate" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="video_total" class="pull-right">Total : </label></div>
+                                                            <div class="col-sm-6"><input type="text" id="video_total" name="video_total" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="project_mngmnt_header">
+                                                <h5 class="mb-0">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#project_mngmnt_collapse" aria-expanded="true" aria-controls="collapse_project_mngmnt">
+                                                        TOTAL PROJECT MANAGEMENT PLATFORM OPERATIONS ALLOCATION
+                                                    </a>
+                                                </h5>
+                                            </div>
+
+                                            <div id="project_mngmnt_collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="project_mngmnt_collapse_heading">
+                                                <div class="container"><br />
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="project_mngmnt_director" class="pull-right">Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="project_mngmnt_director" name="project_mngmnt_director" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="project_mngmnt_supervisor" class="pull-right">Supervisor</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="project_mngmnt_supervisor" name="project_mngmnt_supervisor" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group"></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="project_mngmnt_ass_director" class="pull-right">Associate Director</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="project_mngmnt_ass_director" name="project_mngmnt_ass_director" /></div>
+                                                        </div>
+
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="project_mngmnt_associate" class="pull-right">Associate</label></div>
+                                                            <div class="col-sm-6"><input type="text" id="dproject_mngmnt_associate" name="project_mngmnt_associate" /></div>
+                                                        </div>
+                                                        <div class="col-sm-4 form-group">
+                                                            <div class="col-sm-6"><label for="project_mngmnt_total" class="pull-right">Total : </label></div>
+                                                            <div class="col-sm-6"><input type="text" id="project_mngmnt_total" name="project_mngmnt_total" /></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="modal-footer">                                                                                
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Download</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </form>                               
+                            </div>                           
+
+
+                            <div role="tabpanel" class="tab-pane" id="negotiated">
+                                Negotiated here
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane" id="delta">
+                                Delta here
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane" id="survey">                               
+                                <form id="survey-form" action="@Url.Action("saveSurvey", "api/Survey_Api")" method="post">
+                                    <span class="errorItems"></span>
+                                    <input type="hidden" id="input-survey-business-id" name="SurveyBusinessId" value="" />
+                                    <div id="accordion" role="tablist" aria-multiselectable="true">
+
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="general_questions_header">
+                                                <h5 class="mb-0">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#general_questions" aria-expanded="true" aria-controls="general_questions">
+                                                        GENERAL TAAG QUESTIONS
+                                                    </a>
+                                                </h5>
+                                            </div>
+
+                                            <div id="general_questions" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="general_questions">
+                                                <br />
+                                                @for (var i = 0; i < Model.Sections[0].Questions.Count; i++)
+                                                {
+
+                                                    var question = @Model.Sections[0].Questions[i];
+                                                    <div class="form-group">
+                                                        @if (question.Type == "TextBox")
+                                                        {
+                                                            <label for="input-question-@question.Id" class="control-label col-sm-8 quest-label">@question.Id : @question.Question</label>
+                                                            <input type="text" class="form-control" id="input-question-@question.Id" name="Question-@question.Id" data-type="@question.DataType" />
+                                                        }
+                                                        else if (question.Type == "Radio")
+                                                        {
+                                                            <label for="input-question-@question.Id" class="control-label quest-label">@question.Id : @question.Question</label>
+                                                            var options = question.Options;
+                                                            foreach (var opt in options)
+                                                            {
+                                                                <br /><input type="radio" id="input-question-@question.Id-option-@opt.Id" name="Question.@question.Id" value="@opt.Id" />@opt.Value
+                                                            }
+                                                        }
+                                                        else if (question.Type == "CheckBox")
+                                                        {
+                                                            <label for="question-@question.Id" class="control-label quest-label">@question.Id : @question.Question</label>
+                                                            var options = question.Options;
+                                                            foreach (var opt in options)
+                                                            {
+                                                                <br /><input type="checkbox" id="input-question-@question.Id-option-@opt.Id" name="Question[].@question.Id" value="@opt.Id" />@opt.Value
+                                                            }
+                                                        }
+                                                        else if (question.Type == "Dropdown")
+                                                        {
+
+                                                            var options = question.Options;
+                                                            <label for="question-@question.Id" class="control-label col-sm-8 quest-label">@question.Id : @question.Question</label>
+                                                            <div>
+                                                                <select id="input-question-@question.Id" name="Question.@question.Id" class="form-control">
+                                                                    @foreach (var opt in options)
+                                                                    {
+                                                                        <option id="input-question-@question.Id-option-@opt.Id" value="@opt.Id">@opt.Value</option>
+                                                                    }
+                                                                </select>
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="tech_ops_quests_header">
+                                                <h5 class="mb-0">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse_tech_ops_quests" aria-expanded="false" aria-controls="collapse_tech_ops_quests">
+                                                        TECH OPS QUESTIONS
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapse_tech_ops_quests" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_tech_ops_quests">
+                                                <br />
+                                                @for (var i = 0; i < Model.Sections[1].Questions.Count; i++)
+                                                {
+
+                                                    var question = @Model.Sections[1].Questions[i];
+                                                    <div class="form-group">
+                                                        @if (question.Type == "TextBox")
+                                                        {
+                                                            <label for="question-@question.Id" class="control-label col-sm-8 quest-label">@question.Id : @question.Question</label>
+                                                            <input type="text" class="form-control" id="input-question-@question.Id" name="Question-@question.Id" data-type="@question.DataType" />
+                                                        }
+                                                        else if (question.Type == "Radio")
+                                                        {
+                                                            <label for="question-@question.Id" class="control-label">@question.Id : @question.Question</label>
+                                                            var options = question.Options;
+                                                            foreach (var opt in options)
+                                                            {
+                                                                <br /><input type="radio" id="input-question-@question.Id-option-@opt.Id" name="Question.@question.Id" value="@opt.Id" />@opt.Value                                                                
+                                                            }
+                                                        }
+                                                        else if (question.Type == "CheckBox")
+                                                        {
+                                                            <label for="question-@question.Id" class="control-label quest-label">@question.Id : @question.Question</label>
+                                                            var options = question.Options;
+                                                            foreach (var opt in options)
+                                                            {
+                                                                <br /><input type="checkbox" id="input-question-@question.Id-option-@opt.Id" name="Question[].@question.Id" value="@opt.Id" />@opt.Value                                                               
+                                                            }
+                                                        }
+                                                        else if (question.Type == "Dropdown")
+                                                        {
+
+                                                            var options = question.Options;
+                                                            <label for="question-@question.Id" class="control-label col-sm-8 quest-label">@question.Id : @question.Question</label>
+                                                            <div>
+                                                                <select id="input-question-@question.Id" name="Question.@question.Id" class="form-control">
+                                                                    @foreach (var opt in options)
+                                                                    {
+                                                                        <option id="input-question-@question.Id-option-@opt.Id" value="@opt.Id">@opt.Value</option>
+                                                                    }
+                                                                </select>
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                }
+
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header" role="tab" id="reporting_quests_header">
+                                                <h5 class="mb-0">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse_reporting_quests" aria-expanded="false" aria-controls="collapse_reporting_quests">
+                                                        ANALYST/REPORTING QUESTIONS
+                                                    </a>
+                                                </h5>
+                                            </div>
+                                            <div id="collapse_reporting_quests" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading_reporting_quests">
+
+                                                <br />
+                                                @for (var i = 0; i < Model.Sections[2].Questions.Count; i++)
+                                                {
+
+                                                    var question = @Model.Sections[2].Questions[i];
+                                                    <div class="form-group">
+                                                        @if (question.Type == "TextBox")
+                                                        {
+                                                            <label for="question-@question.Id" class="control-label col-sm-8 quest-label">@question.Id : @question.Question</label>
+                                                            <input type="text" class="form-control" id="input-question-@question.Id" name="Question-@question.Id" data-type="@question.DataType" />
+                                                        }
+                                                        else if (question.Type == "Radio")
+                                                        {
+                                                            <label for="question-@question.Id" class="control-label quest-label">@question.Id : @question.Question</label>
+                                                            var options = question.Options;
+                                                            foreach (var opt in options)
+                                                            {
+                                                                <br /><input type="radio" id="input-question-@question.Id-option-@opt.Id" name="Question.@question.Id" value="@opt.Id" />@opt.Value
+                                                                @*<br /><input type="radio" id="" name="Question.@question.Id" />@opt.Value*@
+                                                            }
+                                                        }
+                                                        else if (question.Type == "CheckBox")
+                                                        {
+                                                            <label for="question-@question.Id" class="control-label quest-label">@question.Id : @question.Question</label>
+                                                            var options = question.Options;
+                                                            foreach (var opt in options)
+                                                            {
+                                                                <br /><input type="checkbox" id="input-question-@question.Id-option-@opt.Id" name="Question[].@question.Id" value="@opt.Id" />@opt.Value
+                                                            }
+                                                        }
+                                                        else if (question.Type == "Dropdown")
+                                                        {
+
+                                                            var options = question.Options;
+                                                            <label for="question-@question.Id" class="control-label col-sm-8 quest-label">@question.Id : @question.Question</label>
+                                                            <div>
+                                                                <select id="input-question-@question.Id" name="Question.@question.Id" class="form-control">
+                                                                    @foreach (var opt in options)
+                                                                    {
+                                                                        <option id="input-question-@question.Id-option-@opt.Id" value="@opt.Id">@opt.Value</option>
+                                                                    }
+                                                                </select>
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                }
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" id="close-survey-btn" data-dismiss="modal">Close</button>
+                                        <button type="submit" id="submit-survey-btn" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+                </div>
+
+                
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    </div>
+
+   

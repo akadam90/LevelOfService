@@ -1,0 +1,310 @@
+﻿body {    
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.quest-label {
+padding-left:0px;
+padding-top : 0px;
+}
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.navbar-custom {
+background-color: #3276b1;
+}
+
+.navbar-brand {
+text-align:left;
+color:#E37222;
+/*font-family: 'Arima Madurai', cursive;*/
+font-weight:bolder;
+font-size:30px;
+padding-top:20px;
+padding-bottom:20px;
+
+}
+
+.navbar-custom .navbar-nav >li > a, .navbar-custom .navbar-nav .userblock{
+    color:#DFDCE3;
+    font-size:15px;    
+    font-weight:bold;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-right:10px;
+    padding-left:10px;
+    
+}
+.navbar-custom .navbar-nav > li > a:hover,.navbar-custom .navbar-nav > li > a:focus  {
+    background-color:#E37222;  
+    height:100%;
+    }
+.navbar-custom .navbar-nav .dropdown {
+    background-color:#E37222;  
+}
+.navbar-custom .navbar-nav .dropdown .dropdown-menu > li > a:hover, .navbar-custom .navbar-nav .dropdown .dropdown-menu > li > a:focus {
+background-color: #3276b1;
+}
+
+.navbar-custom .navbar-nav .active > a {
+    background-color:#E37222;      
+height:100%;
+margin:0;
+}
+
+.navbar-brand:hover {
+    color:#E37222;
+    
+    }
+.navbar-custom .navbar-nav .log-out-btn {
+     background-color:#E37222;  
+     color:#DFDCE3;
+     padding-top:20px;
+    padding-bottom:20px;
+}
+
+.dropdown .dropdown-toggle, .dropdown .dropdown-toggle:focus {
+     background-color:#E37222;
+}
+.dropdown .dropdown-menu >li > a:focus, .dropdown .dropdown-menu >li > a:hover{
+background-color: #3276b1;
+}
+
+/*For all buttons on the website*/
+.btn, .btn:hover, btn:focus {
+  background-color:#E37222;
+  color:#DFDCE3;
+}
+
+p {
+font-size:40px;
+text-align:center;
+font-weight: bold;font-family: 'Arima Madurai', cursive;
+
+}
+
+
+#tag-estimate-modal .modal-dialog{
+width:900px;
+}
+#taag_estimate_note, #business_note {
+font-size:12px;
+color:red;
+}
+
+#project-mangmnt-modal .modal-dialog{
+width:900px;
+}
+#business_modal .modal-dialog {
+width:1100px;
+}
+
+#client-operations-modal .modal-dialog{
+    width:900px;
+}
+
+#digital-modal .modal-dialog{
+    width:900px;
+}
+
+#local-modal .modal-dialog{
+    width:900px;
+}
+
+#ooh-modal .modal-dialog{
+    width:900px;
+}
+
+#bill-pay-traffic-modal .modal-dialog{
+    width:900px;
+}
+
+#video-modal .modal-dialog{
+    width:900px;
+}
+
+#publishing-modal .modal-dialog{
+    width:900px;
+}
+
+#accordion .card-header {
+  background-color: #3276b1;
+  color:#DFDCE3;
+  padding:0px;
+  border:solid;
+  border-color:#E37222;
+  cursor:pointer;
+  text-align:center;
+  margin: 0px;
+
+}
+
+#accordion .card-header a{
+     color:#DFDCE3;
+  display: block;
+  font-size: 12pt;
+  width: 100%;
+  text-indent: 10px;
+}
+
+#accordion .ui-accordion-header {
+  background-color: #3276b1;
+  color:#DFDCE3;
+  padding-top:10px;
+  padding-bottom:10px;
+  border:solid;
+  border-color:#E37222;
+  cursor:pointer;
+  text-align:center;
+  margin: 0px;
+}
+
+#accordion .ui-accordion-header a {
+  color:#DFDCE3;
+  line-height: 42px;
+  display: block;
+  font-size: 12pt;
+  width: 100%;
+  text-indent: 10px;
+}
+
+input.underline-text
+{
+    border:0;
+    border-bottom:solid 1px #000;
+    outline:none;
+}
+
+/*Page header */
+
+/*blue color is #07889B and white is #DFDCE3 and orange is #E37222*/
+
+.sorting_asc, .sorting {
+background-color : #3276b1
+}
+.page-header {
+    background-color: #3276b1;  
+    padding-top:10px;
+    padding-bottom:20px;
+    height:100px;
+    margin:0px;
+    border:0px;
+}
+
+#starcom-logo {
+    width: 200px;
+    height: 60px;
+    margin: 0px;
+    position : relative;
+}
+
+#page-header-tile {
+font-weight:bold;
+font-size:40px;
+color:#E37222;
+padding :10px;
+display:inline-block;
+padding-left: 550px;
+text-align:center;
+}
+
+#client-btn{
+height:30px;
+width:40px;
+padding-right:60px;
+background-color:#E37222;
+color: #DFDCE3;
+margin-top: 61px;
+}
+
+#logout-btn{
+background-color:#E37222;
+color: #DFDCE3;
+margin-top: 58px;
+margin-left: 20px;
+}
+
+.modal-header{
+    background-color:#3276b1;
+    text-align:center;
+    color:#DFDCE3;
+    font-weight:bolder;
+}
+
+.control-label {
+padding-top:15px;
+}
+
+.errorItems p{
+font-size:10px;
+color:red;
+font-weight:bold;
+text-align:left;
+
+}
+
+a.surveyLinks:hover{
+color:red
+}
+
+.surveyLinks{
+font-size:10px;
+color:red;
+font-weight:bold;
+text-align:left;
+padding-left:8px;
+cursor:pointer;
+}
+
+/*Message Modal content**/
+#message-modal .modal-body p {
+font-size : 15px;
+font-weight : bold;
+text-align:center
+}
+
+/*Delete, Download and Final Scenario Modal content**/
+#delete-scenario-modal .modal-body p , #download-scenario-modal .modal-body p, #final-scenario-modal .modal-body p{
+font-size : 15px;
+font-weight : bold;
+text-align:center
+}
+
+/*The bootstrap icon used in DataTables for options*/
+.billpay-option-links , .billpay-option-links a:focus,  .billpay-option-links a:visited{
+color : #E37222
+}

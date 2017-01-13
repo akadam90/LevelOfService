@@ -1,0 +1,235 @@
+﻿@model LOS.Models.Client_Operations_Form_Model
+
+<div class="modal fade" tabindex="-1" role="dialog" id="client-operations-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Client Operations</h4>
+            </div>
+            <div class="modal-body">   
+                <form id="client-operations-form" action="" class="form-horizontal" method="">
+                    <input type="hidden" id="client-scenario-id" value="0"/>
+                    <input type="hidden" id="client-business-id" value="0" />
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">Select your desired Client Operations Service Level:</div>
+                            <div class="col-sm-4">
+                                <select id="input-clients-ops-service-level" class="form-control">
+                                    <option value="0">---</option>
+                                    @for (var i = 0; i < @Model.ServiceLevels.Count; i++)
+                                    {
+                                        <option id="input-clients-ops-service-level-@Model.ServiceLevels[i].Id" value="@Model.ServiceLevels[i].Id">@Model.ServiceLevels[i].Level</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <br />  
+                    
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Billing</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Draft_Billing" name="Draft_Billing" />
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Customized RACI</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Customized_RACI" name="Customized_RACI" />
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Budget reporting</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Budget_Reporting" name="Budget_Reporting" />
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Media landscape support</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Media_Landscape_Support" name="Media_Landscape_Support" />
+                            </div>
+                        </div> 
+                    
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Basic competitive</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Basic_Competitive" name="Basic_Competitive" />
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Additional competitive</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Additional_Competitive" name="Additional_Competitive" />
+                            </div>
+                        </div> 
+                    
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Audit Requests</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Audit_Requests" name="Audit_Requests" />
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Additional templatized reporting</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Additional_Templatized_Reporting" name="Additional_Templatized_Reporting" />
+                            </div>
+                        </div> 
+                    
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Authorizations</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Authorizations" name="Authorizations" />
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Modeling data pulls</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Modeling_Data_Pulls" name="Modeling_Data_Pulls" />
+                            </div>
+                        </div> 
+                               
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Systems administration</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Systems_Administration" name="Systems_Administration" />
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Tech Ops in-house consultancy</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="TOPS_In_House_Consultancy" name="TOPS_In_House_Consultancy" />
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Basic data pulls</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Basic_Data_Pulls" name="Basic_Data_Pulls" />
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Advanced P&L</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="PL_Support" name="PL_Support" />
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Onboarding</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Onboarding" name="Onboarding" />
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Mgmt of Cross-Practice Tasks</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Mgmt_Of_Cross_Practice_Tasks" name="Mgmt_Of_Cross_Practice_Tasks" />
+                            </div>
+                        </div>   
+                    
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Finance Support</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Finance_Support" name="Finance_Support" />
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Dashboards</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Dashboards" name="Dashboards" />
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>#Brands/Clients</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Brands_And_Clients" name="Brands_And_Clients" />
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Customized Reprting</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Customized_Reporting" name="Customized_Reporting" />
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="" class="control-label"><i>Global Support</i></label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control underline-text" id="Global_Support" name="Global_Support" />
+                            </div>                            
+                        </div>  <br/>             
+
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3"><label for=" " class="control-label">FTE Allocation Total : </label></div>
+                        <div class="col-sm-3"><input type="text" class="form-control underline-text" id="client-operations-total" name="" /></div>
+                        <div class="col-sm-3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="" class="control-label">Director</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control underline-text" id="Director" name="Director" />
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="" class="control-label">Supervisor</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control underline-text" id="Supervisor" name="Supervisor" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="" class="control-label">Associate Director</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control underline-text" id="Associate_Director" name="Associate_Director" />
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="" class="control-label">Associate</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control underline-text" id="Associate" name="Associate" />
+                        </div>
+                    </div>
+                                      
+            </div> 
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+           
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

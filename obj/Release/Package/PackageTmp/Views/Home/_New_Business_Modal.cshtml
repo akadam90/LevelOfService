@@ -1,0 +1,62 @@
+﻿@model LOS.Models.Business_Form_Model
+
+<div class="modal fade" tabindex="-1" role="dialog" id="new-business-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">New Business</h4>
+            </div>
+            <div class="modal-body">
+                <p id="business_note"><i>Enter basic business information</i></p>
+                <form role="form" id="new-business-form" action="@Url.Action("saveBusiness", "api/Business_Api")" class="form-horizontal" method="post">                   
+                    <input type="hidden" id="new-business-id" value="0" name="BusinessId" />
+                    @*<input type="hidden" id="business-client-id" name="BusinessClientId" value="0" />*@
+                    <input type="hidden" id="business-user-id" name="BusinessUserId" value="1" />
+                    
+                     @*<div class="form-group">
+                        <label for="input-business-name" class="control-label col-sm-3">Name : </label>
+                        <input type="text" class="form-control col-sm-6" id="input-business-name" name="BusinessName" value=""/>
+                    </div>*@
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="input-business-type">Type : </label>
+                        <select class="form-control col-sm-6" id="input-business-type" name="BusinessTypeId">
+                            <option id="business-type-0" value="0">---</option>
+                            @for (var i = 0; i < Model.BusinessTypes.Count; i++)
+                            {
+                                <option id="business-type-@Model.BusinessTypes[i].Id" value="@Model.BusinessTypes[i].Id">@Model.BusinessTypes[i].Type</option>
+                            }
+                        </select>                        
+                    </div>
+                    <div class="form-group">
+                        <label for="input-business-client" class="control-label col-sm-3">Client</label>
+                        <select id="input-business-client" class="form-control col-sm-6" name="BusinessClientId">
+                            <option value="-1">---</option>
+                            @for (var i = 0; i < @Model.Clients.Count; i++)
+                            {
+                                <option id="business-client-@Model.Clients[i].Id" value="@Model.Clients[i].Id">@Model.Clients[i].Client</option>
+                            }
+                            <option id="business-client-0" value="0">----New Client---</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-business-year" class="control-label col-sm-3">Year</label>
+                        <input type="text" class="form-control col-sm-6" id="input-business-year" name="BusinessYear" value="" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="input-business-comments">Comments</label>
+                        <textarea id="input-business-comments" name="BusinessComments" class="form-control col-sm-6"></textarea>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Add Business</button>
+                    </div>
+                </form>
+            </div>           
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

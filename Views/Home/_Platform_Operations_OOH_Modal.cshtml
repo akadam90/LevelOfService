@@ -1,0 +1,72 @@
+﻿@model LOS.Models.OOH_Form_Modal
+<div class="modal fade" tabindex="-1" role="dialog" id="ooh-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Platform Operations-OOH</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" id="ooh-director-muliplier" value="@Model.ooh_mulipliers.Director" />
+                    <input type="hidden" id="ooh-associate-director-mulitiplier" value="@Model.ooh_mulipliers.Associate_Director" />
+                    <input type="hidden" id="ooh-associate-mulitiplier" value="@Model.ooh_mulipliers.Associate" />
+                    <input type="hidden" id="ooh-spervisor-mulitiplier" value="@Model.ooh_mulipliers.Supervisor" />
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6"><label class="control-label">Provide your approximate Gross Billings:</label></div>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control underline-text" id="input-ooh-billings" name="" />
+                            </div>
+                            <div class="col-sm-2"><button type="button" class="btn btn-primary" id="cal-ooh-btn">Calculate</button></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5"><label for=" " class="control-label">OOH Platform FTE Allocation Total: </label></div>
+                            <div class="col-sm-3"><input type="text" class="form-control underline-text" id="platform-ooh-total" name="" /></div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="platform-ooh-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Supervisor</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="platform-ooh-supervisor" name="" />
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Associate Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="platform-ooh-associate-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Associate</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="platform-ooh-associate" name="" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

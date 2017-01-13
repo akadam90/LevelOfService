@@ -1,0 +1,76 @@
+﻿@model LOS.Models.Digital_Form_Modal
+
+<div class="modal fade" tabindex="-1" role="dialog" id="digital-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Platform Operations-Digital</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="digital-form" action="@Url.Action("saveDigitalScenario", "api/Digital_Api")" method="post">
+                    <input type="hidden" id="digital-scenario-id" value="0" />
+                    <input type="hidden" id="digital-business-id" value="0" />
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6"><label class="control-label">Provide your approximate NET Billings:</label></div>
+                            <div class="col-sm-4">
+                                <select id="input-digital-net-billings" class="form-control">
+                                    <option value="0">---</option>
+                                    @for (var i = 0; i < @Model.netBillings.Count; i++)
+                                    {
+                                        <option id="@Model.netBillings[i].Id" value="@Model.netBillings[i].Id">@Model.netBillings[i].Spending</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5"><label for="platform-digital-total" class="control-label">Digital Platform FTE Allocation Total: </label></div>
+                            <div class="col-sm-3"><input type="text" class="form-control underline-text" id="platform-digital-total" name="" /></div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="platform-digital-director" class="control-label">Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="platform-digital-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="platform-digital-supervisor" class="control-label">Supervisor</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="platform-digital-supervisor" name="" />
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="platform-digital-associate-director" class="control-label">Associate Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="platform-digital-associate-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="platform-digital-associate" class="control-label">Associate</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="platform-digital-associate" name="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" id="submit-digital-btn" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+
+            </div>            
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

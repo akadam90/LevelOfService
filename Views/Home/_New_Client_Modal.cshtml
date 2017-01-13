@@ -1,0 +1,25 @@
+﻿<div class="modal fade" tabindex="-1" role="dialog" id="new-client-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Add New Client</h4>
+            </div>
+            <div class="modal-body">
+               <form class="form-horizontal" id="new-client-form" method="post" action="@Url.Action("addClient","api/Client_Api")">
+                   <input type="hidden" value="0" id="new-client-id" name="Id"/>
+                   <div class="form-group">
+                       <label for="input-client-name" class="control-label col-sm-4">Name : </label>
+                       <input class="form-control col-sm-6" type="text" id="input-client-name" value="" name="Client" />
+                   </div>  
+                   
+                   <div class="modal-footer">
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                       <button type="submit" class="btn btn-primary" id="add-client-btn">Add</button>
+                   </div>                  
+               </form>
+
+            </div>            
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

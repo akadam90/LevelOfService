@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")    
+
+    @*@if (this.Session["Theme"] != null)
+    {
+        if (!string.IsNullOrEmpty(this.Session["Theme"].ToString()))
+        {
+            if (this.Session["Theme"].ToString() != "default")
+            {
+                <link rel="stylesheet" href="@Url.Content("~/Content/" + this.Session["Theme"].ToString() + "-bootstrap.min.css")" />
+            }
+        }
+    }*@
+    <link rel="stylesheet" href="@Url.Content("~/Content/Site.css")" />    
+
+    @Scripts.Render("~/Scripts/js")
+    @RenderSection("additionalStyles", false)
+
+    <style>
+        .col-center-block {
+            float: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+   
+    @RenderSection("scripts", required: false)
+    @RenderSection("PartialsWithScripts", false)
+</body>
+</html>

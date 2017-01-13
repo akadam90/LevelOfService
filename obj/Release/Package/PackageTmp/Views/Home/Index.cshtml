@@ -1,0 +1,372 @@
+﻿@model LOS.Services.Interface.Models.UserModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (Model.Role == "Business_Lead")    //if Business Lead
+{ 
+
+    @*<h1>This is Business Lead</h1>*@
+    <button class="btn" type="button" id="new-business-btn">
+        <b>New Business</b>
+    </button>   <br />
+    
+    <div>
+        <table id="business-dataTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Year</th>                                
+              </tr>
+                </thead>
+        </table>
+    </div>     
+      
+}
+else if (Model.Role == "Department_Lead")    //Department Lead
+{         
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-12">
+                  <h3 class="text-center"><b>@Model.DepartmentName </b></h3>
+              </div>
+          </div>
+          <div class="row pull-right">
+              <div class="col-sm-12 dropdown">                 
+                  <select id="business-select" style="margin-top: 0px; background-color: #E37222; color: #DFDCE3; font-weight:bold; height:40px;padding-left:10px">
+                      <option id="business-select-option-0" value="0">Select Business</option>
+                  </select>                 
+              </div><br/>
+          </div>                                                           
+    </div>            
+        
+    if (Model.DepartmentName == "Project Management")
+    {           
+    <button type="button" class="btn" id="new-project-mangmnt-scenario"> NEW Scenario</button>
+
+    }
+    else if (Model.DepartmentName == "Bill Pay/Traffic")
+    {
+        <button type="button" class="btn" id="new-bill-pay-scenario"> NEW SCENARIO </button> <br/><br/>
+        <div role="tabpanel">
+        <ul class="nav nav-tabs" role="tablist" id="billpayTabs">
+            <li role="presentation" class="active"><a href="#billpay-scenarios" id="billpay-scenarios-tab" role="tab" data-toggle="tab">Scenarios</a></li>
+            <li role="presentation"><a href="#billpay-survey" id="billpay-survey-tab" role="tab" data-toggle="tab">Survey</a></li>
+            <li role="presentation"><a href="#billpay-submitted" id="billpay-submitted-tab" role="tab" data-toggle="tab">Submitted</a></li>
+        </ul>
+
+        <div class="tab-content">    
+                <div role="tabpanel" class="tab-pane active" id="billpay-scenarios">
+                    <table id="billpay-scenarios-dataTable">
+                        <thead>
+                            <tr>                           
+                                <th></th>
+                                <th>Sceanrio Name</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="billpay-survey">
+                    billpay-survey
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="billpay-submitted">
+                    Submitted
+                </div>
+
+            </div>
+    </div>
+    }
+    else if (Model.DepartmentName == "Platform Operations-Digital")
+    {
+        <button type="button" class="btn" id="new-digital-scenario"> NEW </button> <br/><br/>
+        <div role="tabpanel">
+        <ul class="nav nav-tabs" role="tablist" id="digitalTabs">
+            <li role="presentation" class="active"><a href="#digital-scenarios" id="digital-scenarios-tab" role="tab" data-toggle="tab">Scenarios</a></li>
+            <li role="presentation"><a href="#digital-survey" id="digital-survey-tab" role="tab" data-toggle="tab">Survey</a></li>
+            <li role="presentation"><a href="#digital-submitted" id="digital-submitted-tab" role="tab" data-toggle="tab">Submitted</a></li>
+        </ul>
+
+        <div class="tab-content">    
+            <div role="tabpanel" class="tab-pane active" id="billpay-scenarios">
+                <table id="digital-scenarios-dataTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Scenario Name</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="digital-survey">
+                billpay-survey
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="digital-submitted">
+                Submitted
+            </div>
+
+            </div>
+    </div>
+    }
+    else if (Model.DepartmentName == "Platform Operations-Local")
+    {
+        <button type="button" class="btn" id="new-local-scenario"> NEW </button>
+    }
+    else if (Model.DepartmentName == "Platform Operations-OOH")
+    {
+        <button type="button" class="btn" id="new-ooh-scenario"> NEW </button>
+    }
+    else if (Model.DepartmentName == "Platform Operations-Publishing")
+    {
+        <button type="button" class="btn" id="new-publishing-scenario"> NEW </button>
+    }
+    else if (Model.DepartmentName == "Platform Operations-Video")
+    {
+        <button type="button" class="btn" id="new-video-scenario"> NEW </button>
+    }
+    else if (Model.DepartmentName == "Client Operations")
+    {
+    <button type="button" class="btn" id="new-client-operations-scenario"> NEW Scenario</button><br/><br/>
+          <div role="tabpanel">
+              <ul class="nav nav-tabs" role="tablist" id="clientOperationsTabs">
+                  <li role="presentation" class="active"><a href="#client-operations-scenarios" id="client-operations-scenarios-tab" role="tab" data-toggle="tab">Scenarios</a></li>
+                  <li role="presentation"><a href="#client-operations-survey" id="client-operations-survey-tab" role="tab" data-toggle="tab">Survey</a></li>
+                  <li role="presentation"><a href="#client-operations-submitted" id="client-operations-submitted-tab" role="tab" data-toggle="tab">Submitted</a></li>
+              </ul>
+
+        <div class="tab-content">    
+            <div role="tabpanel" class="tab-pane active" id="client-operations-scenarios">
+                <table id="client-operations-scenarios-dataTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Scenario Name</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="client-operations-survey">
+                billpay-survey
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="client-operations-submitted">
+                Submitted
+            </div>
+
+            </div>
+    </div>
+    
+    
+    }
+    else if (Model.DepartmentName == "Preliminary TAAG Estimate & CPM")
+    { 
+    <button type="button" class="btn" id="new-taag-estimate-scenario"> NEW </button><br/><br/>
+          <div role="tabpanel">
+              <ul class="nav nav-tabs" role="tablist" id="taagTabs">
+                  <li role="presentation" class="active"><a href="#taag-scenarios" id="taag-scenarios-tab" role="tab" data-toggle="tab">Scenarios</a></li>
+                  <li role="presentation"><a href="#taag-survey" id="taag-survey-tab" role="tab" data-toggle="tab">Survey</a></li>
+                  <li role="presentation"><a href="#taag-submitted" id="taag-submitted-tab" role="tab" data-toggle="tab">Submitted</a></li>
+              </ul>
+
+        <div class="tab-content">    
+            <div role="tabpanel" class="tab-pane active" id="taag-scenarios">
+                <table id="taag-scenarios-dataTable">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Scenario Name</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="taag-survey">
+                billpay-survey
+            </div>
+
+            <div role="tabpanel" class="tab-pane" id="taag-submitted">
+                Submitted
+            </div>
+
+            </div>
+    </div>
+    }
+}
+
+
+@section AdditionalScripts{
+   <script type="text/javascript" src="@Url.Content("~/Scripts/Home/Index.js")"></script>
+    <script>
+        $(function () {
+            LOS.Home.Index.init();
+        })
+    </script>
+
+    @if (Model.Role == "Business_Lead")
+{
+       <script type="text/javascript" src="@Url.Content("~/Scripts/Home/Business_Lead.js")"></script>
+       <script type="text/javascript" charset="utf8" src="~/Scripts/jquery.dataTables.min.js"></script>
+        <script>
+            $(function () {
+                LOS.Home.Business_Lead.init({
+                    getClients: '@Url.Action("getClients", "api/Client_Api")',
+                    getAllBusinesses: '@Url.Action("getAllBusinesses", "api/Business_Api")',
+                    getSurvey : '@Url.Action("getSurveyResponses", "api/Survey_Api")'
+                });
+            })
+        </script>
+}
+    else if (Model.Role == "Department_Lead")
+    {
+        <script type="text/javascript" charset="utf8" src="~/Scripts/jquery.dataTables.min.js"></script>
+        
+        if (Model.DepartmentName == "Project Management")
+        {
+            <script type="text/javascript" src="@Url.Content("~/Scripts/Departments/Project_Management.js")"></script>            
+            <script type="text/javascript">
+                $(function () {
+                    LOS.Departments.Project_Management.init({
+                        getFTEsUrl: '@Url.Action("getFTEAllocations", "api/Project_mngmt_Api")'
+                    });
+                })
+            </script>
+        }
+        else if (Model.DepartmentName == "Preliminary TAAG Estimate & CPM")
+        { 
+         <script type="text/javascript" src="@Url.Content("~/Scripts/Departments/TAAG_Estimate.js")"></script>         
+         <script type="text/javascript">
+             $(function () {
+                LOS.Departments.TAAG_Estimate.init({
+                    getFTEsUrl: '@Url.Action("getFTEAllocations", "api/TAAG_Api")',
+                    getBusinesses: '@Url.Action("getBusinesses", "api/Client_Api")',
+                    getAllScenarios: '@Url.Action("getAllScenarios", "api/TAAG_Api")',
+                    getScenario: '@Url.Action("getScenario", "api/TAAG_Api")',
+                    saveClientScenario: '@Url.Action("saveClientScenario", "api/TAAG_Api")',
+                    markFinal: '@Url.Action("markFinal", "api/TAAG_Api")',
+                    deleteScenario: '@Url.Action("deleteScenario", "api/TAAG_Api")',
+                });
+                })
+            </script>
+        }
+        else if (Model.DepartmentName == "Client Operations")
+        { 
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Departments/Client_Operations.js")"></script>       
+        <script type="text/javascript">
+                $(function () {
+                    LOS.Departments.Client_Operations.init({
+                        getFTEsUrl: '@Url.Action("getFTEAllocations", "api/Client_Operations_Api")',
+                        getBusinesses: '@Url.Action("getBusinesses", "api/Client_Api")',
+                        getAllScenarios: '@Url.Action("getAllScenarios", "api/Client_Operations_Api")',
+                        getScenario:'@Url.Action("getScenario", "api/Client_Operations_Api")',
+                        saveClientScenario: '@Url.Action("saveClientScenario", "api/Client_Operations_Api")',
+                        markFinal: '@Url.Action("markFinal", "api/Client_Operations_Api")',
+                        deleteScenario: '@Url.Action("deleteScenario", "api/Client_Operations_Api")',
+                    });
+                })
+            </script>
+        }
+        else if (Model.DepartmentName == "Bill Pay/Traffic")
+        { 
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Departments/Bill_Pay_Traffic.js")"></script>                
+        <script type="text/javascript">
+                $(function () {
+                    LOS.Departments.Bill_Pay_Traffic.init({
+                        getFTEsUrl: '@Url.Action("getFTEAllocations", "api/Bill_Pay_Traffic_Api")',
+                        getAllScenarios: '@Url.Action("getAllScenarios", "api/Bill_Pay_Traffic_Api")',
+                        getBusinesses: '@Url.Action("getBusinesses", "api/Client_Api")',
+                        getScenario: '@Url.Action("getScenario", "api/Bill_Pay_Traffic_Api")',
+                        deleteScenario: '@Url.Action("deleteScenario", "api/Bill_Pay_Traffic_Api")',
+                        markFinal: '@Url.Action("markFinal", "api/Bill_Pay_Traffic_Api")'
+                    });
+
+                })
+            </script>
+        }
+        else if (Model.DepartmentName == "Platform Operations-Digital")
+        { 
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Departments/Platform_Operations_Digital.js")"></script>        
+        <script type="text/javascript">
+            $(function () {
+                LOS.Departments.Platform_Operations_Digital.init({
+                    getFTEsUrl: '@Url.Action("getFTEAllocations", "api/Digital_Api")',
+                    saveDigitalScenario: '@Url.Action("saveDigitalScenario", "api/Digital_Api")',
+                    getBusinesses: '@Url.Action("getBusinesses", "api/Client_Api")',
+                    getAllScenarios: '@Url.Action("getAllScenarios", "api/Digital_Api")',
+                    getScenario: '@Url.Action("getScenario", "api/Digital_Api")',
+                    deleteScenario: '@Url.Action("deleteScenario", "api/Digital_Api")',
+                    markFinal: '@Url.Action("markFinal", "api/Digital_Api")'
+
+        });
+    })
+            </script>
+        }
+         else if (Model.DepartmentName == "Platform Operations-Local")
+        { 
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Departments/Platform_Operations_Local.js")"></script>        
+        <script type="text/javascript">
+                $(function () {
+                    LOS.Departments.Platform_Operations_Local.init();
+                })
+            </script>
+        }
+         else if (Model.DepartmentName == "Platform Operations-OOH")
+        { 
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Departments/Platform_Operations_OOH.js")"></script>        
+        <script type="text/javascript">
+         $(function () {
+            LOS.Departments.Platform_Operations_OOH.init();
+                })
+            </script>
+        }
+         else if (Model.DepartmentName == "Platform Operations-Publishing")
+        { 
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Departments/Platform_Operations_Publishing.js")"></script>        
+        <script type="text/javascript">
+                $(function () {
+                    LOS.Departments.Platform_Operations_Publishing.init();
+                })
+            </script>
+        }
+         else if (Model.DepartmentName == "Platform Operations-Video")
+        { 
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Departments/Platform_Operations_Video.js")"></script>        
+        <script type="text/javascript">
+                $(function () {
+                    LOS.Departments.Platform_Operations_Video.init({
+                        getFTEsUrl: '@Url.Action("getFTEAllocations", "api/Video_Api")',
+                    });
+                })
+            </script>
+        }
+    }
+    
+    }
+
+
+@section PartialScripts{
+    @{Html.RenderAction("_Bill_Pay_Traffic_Modal", "Home");}
+    @{Html.RenderAction("_Platform_Operations_Digital_Modal","Home");}
+    @{Html.RenderAction("_Platform_Operations_Local_Modal", "Home");}
+    @{Html.RenderAction("_Platform_Operations_OOH_Modal", "Home");}
+    @{Html.RenderAction("_Platform_Operations_Publishing_Modal", "Home");}
+    @{Html.RenderAction("_Platform_Operations_Video_Modal", "Home");}
+    @{Html.RenderAction("_TAAG_Estimate_Modal", "Home");}
+    @{Html.RenderAction("_Client_Operations_Modal", "Home");}
+    @{Html.RenderAction("_Project_Management_Modal", "Home");}
+    @{Html.RenderAction("_New_Business_Modal", "Home");}        
+    @{Html.RenderAction("_BusinessModal","Home");}
+
+    @*@Html.Partial("_BusinessModal");*@      
+    @Html.Partial("_New_Client_Modal");
+    @Html.Partial("_Message_Modal");
+    @Html.Partial("_Delete_Scenario_Modal");
+    @Html.Partial("_Final_Scenario_Modal");
+    @Html.Partial("_Download_Scenario_Modal");
+    }

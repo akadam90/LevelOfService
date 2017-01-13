@@ -1,0 +1,336 @@
+﻿@model LOS.Models.Bill_Pay_Traffic_Form_Model
+
+<div class="modal fade" tabindex="-1" role="dialog" id="bill-pay-traffic-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Bill Pay/Traffic</h4>
+            </div>
+            <div class="modal-body">
+                <form id="bill-pay-traffic-form" class="form-horizontal" method="post" action="@Url.Action("saveBillPayScenario", "api/Bill_Pay_Traffic_Api")">
+                    <span class="errorItems"></span>
+                    <input type="hidden" id="billpay-business-id" value="0"/>  
+                    <input type="hidden" id="billpay-scenario-id" value="0"/>                  
+                    <table class="table" border="1">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Digital Bill/Pay</th>
+                                <td>
+                                    <select id="input-digital-spending" class="form-control">
+                                        @for (var i = Model.Digital_Spendings.Count - 1; i >= 0; i--)
+                                        {                                                                                      
+                                            <option id="input-digital-spending-@Model.Digital_Spendings[i].Id" value="@Model.Digital_Spendings[i].Id">@Model.Digital_Spendings[i].Spending</option>                                         
+                                        }
+                                    </select>
+                                </td>
+                                <td>Desired Level of Service:</td>
+                                <td><input type="text" class="form-control underline-text" id="digital-service" name="digital-service" /></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">National Bill/Payy</th>
+                                <td>
+                                    <select id="input-national-spending" class="form-control">
+                                        @for (var i = Model.National_Spendings.Count - 1; i >= 0; i--)
+                                    {
+                                            <option id="input-national-spending-@Model.National_Spendings[i].Id" value="@Model.National_Spendings[i].Id">@Model.National_Spendings[i].Spending</option>
+                                    }
+                                    </select>
+                                </td>
+                                <td>Desired Level of Service:</td>
+                                <td><input type="text" class="form-control underline-text" id="national-service" name="" /></td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">OOH Bill/Pay</th>
+                                <td>
+                                    <select id="input-ooh-spending" class="form-control">
+                                        @for (var i = Model.OOH_Spendings.Count - 1; i >= 0; i--)
+                                    {
+                                            <option id="input-ooh-spending-@Model.OOH_Spendings[i].Id" value="@Model.OOH_Spendings[i].Id">@Model.OOH_Spendings[i].Spending</option>
+                                    }
+                                    </select>
+
+                                </td>
+                                <td>Desired Level of Service:</td>
+                                <td><input type="text" class="form-control underline-text" id="ooh-service" name="" /></td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Print Bill/Pay</th>
+                                <td>
+                                    <select id="input-print-spending" class="form-control">
+                                        @for (var i = Model.Print_Spendings.Count - 1; i >= 0; i--)
+                                   {
+                                            <option id="input-print-spending-@Model.Print_Spendings[i].Id" value="@Model.Print_Spendings[i].Id">@Model.Print_Spendings[i].Spending</option>
+                                   }
+                                    </select>
+
+                                </td>
+                                <td>Desired Level of Service:</td>
+                                <td><input type="text" class="form-control underline-text" id="print-service" name="" /></td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">Broadcast Traffic</th>
+                                <td>
+                                    <select id="input-broadcast-spending" class="form-control">
+                                        @for (var i = Model.Broadcast_Spendings.Count - 1; i >= 0; i--)
+                                   {
+                                            <option id="input-broadcast-spending-@Model.Broadcast_Spendings[i].Id" value="@Model.Broadcast_Spendings[i].Id">@Model.Broadcast_Spendings[i].Spending</option>
+                                   }
+                                    </select>
+                                </td>
+                                <td>Desired Level of Service:</td>
+                                <td><input type="text" class="form-control underline-text" id="broadcast-service" name="" /></td>
+                            </tr>
+
+
+
+                            <tr>
+                                <th scope="row">OOH Traffic</th>
+                                <td>
+                                    <select id="input-oohtraffic-spending" class="form-control">
+                                        @for (var i = Model.OOHTraffic_Spendings.Count - 1; i >= 0; i--)
+                                   {
+                                            <option id="input-oohtraffic-spending-@Model.OOHTraffic_Spendings[i].Id" value="@Model.OOHTraffic_Spendings[i].Id">@Model.OOHTraffic_Spendings[i].Spending</option>
+                                   }
+                                    </select>
+
+                                </td>
+                                <td>Desired Level of Service:</td>
+                                <td><input type="text" class="form-control underline-text" id="oohtraffic-service" name="" /></td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                    <br/>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5"><label for=" " class="control-label">Digital Bill/Pay FTE Allocation Total: </label></div>
+                            <div class="col-sm-3"><input type="text" class="form-control underline-text" id="digital-total" name=" " /></div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="digital-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Lead Liaison</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="digital-lead-liaison" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Associate Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="digital-associate-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Liaison</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="digital-liaison" name="" />
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5"><label for=" " class="control-label">National Bill/Pay FTE Allocation Total: </label></div>
+                            <div class="col-sm-3"><input type="text" class="form-control underline-text" id="national-total" name="" /></div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="national-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Lead Liaison</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="national-lead-liaison" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Associate Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="national-associate-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Liaison</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="national-liaison" name="" />
+                            </div>
+                        </div>
+
+                        <hr />
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5"><label for=" " class="control-label">OOH Bill/Pay FTE Allocation Total: </label></div>
+                            <div class="col-sm-3"><input type="text" class="form-control underline-text" id="ooh-total" name="ooh--total" /></div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="ooh-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Lead Liaison</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="ooh-lead-liaison" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Associate Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="ooh-associate-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Liaison</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="ooh-liaison" name="" />
+                            </div>
+                        </div>
+
+                        <hr />
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5"><label for=" " class="control-label">Print Bill/Pay FTE Allocation Total: </label></div>
+                            <div class="col-sm-3"><input type="text" class="form-control underline-text" id="print-total" name="" /></div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="print-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Lead Liaison</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="print-lead-liaison" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Associate Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="print-associate-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Liaison</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="print-liaison" name="" />
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5"><label for=" " class="control-label">Broadcast Traffic FTE Allocation Total:</label></div>
+                            <div class="col-sm-3"><input type="text" class="form-control underline-text" id="broadcast-total" name="" /></div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="broadcast-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Lead Liaison</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="broadcast-lead-liaison" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Associate Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="broadcast-associate-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Liaison</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="broadcast-liaison" name="" />
+                            </div>
+                        </div>
+
+                        <hr />
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-5"><label for=" " class="control-label">OOH Traffic FTE Allocation Total:</label></div>
+                            <div class="col-sm-3"><input type="text" class="form-control underline-text" id="oohtraffic-total" name="" /></div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="oohtraffic-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Lead Liaison</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="oohtraffic-lead-liaison" name="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Associate Director</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="oohtraffic-associate-director" name="" />
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="" class="control-label">Liaison</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control underline-text" id="oohtraffic-liaison" name="" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" id="submit-bill-pay-btn" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+                </div>
+            
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

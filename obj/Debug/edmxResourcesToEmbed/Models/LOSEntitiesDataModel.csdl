@@ -1,0 +1,1266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="LOSEntitiesDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="LOSEntitiesDataModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bill_Pay" EntityType="LOSEntitiesDataModel.Bill_Pay" />
+    <EntitySet Name="Bill_Pay_Traffic_lk" EntityType="LOSEntitiesDataModel.Bill_Pay_Traffic_lk" />
+    <EntitySet Name="Bill_Pay_Traffic_Scenarios" EntityType="LOSEntitiesDataModel.Bill_Pay_Traffic_Scenarios" />
+    <EntitySet Name="Businesses" EntityType="LOSEntitiesDataModel.Business" />
+    <EntitySet Name="Business_Status" EntityType="LOSEntitiesDataModel.Business_Status" />
+    <EntitySet Name="Business_Type" EntityType="LOSEntitiesDataModel.Business_Type" />
+    <EntitySet Name="Clients" EntityType="LOSEntitiesDataModel.Client" />
+    <EntitySet Name="Client_Operations_lk" EntityType="LOSEntitiesDataModel.Client_Operations_lk" />
+    <EntitySet Name="Client_Operations_Scenarios" EntityType="LOSEntitiesDataModel.Client_Operations_Scenarios" />
+    <EntitySet Name="Departments" EntityType="LOSEntitiesDataModel.Department" />
+    <EntitySet Name="Negotiated_And_Approved_Version" EntityType="LOSEntitiesDataModel.Negotiated_And_Approved_Version" />
+    <EntitySet Name="Platform_Operations_Digital_lk" EntityType="LOSEntitiesDataModel.Platform_Operations_Digital_lk" />
+    <EntitySet Name="Platform_Operations_Digital_Scenarios" EntityType="LOSEntitiesDataModel.Platform_Operations_Digital_Scenarios" />
+    <EntitySet Name="Platform_Operations_Local_lk" EntityType="LOSEntitiesDataModel.Platform_Operations_Local_lk" />
+    <EntitySet Name="Platform_Operations_OOH_lk" EntityType="LOSEntitiesDataModel.Platform_Operations_OOH_lk" />
+    <EntitySet Name="Platform_Operations_Publishing_lk" EntityType="LOSEntitiesDataModel.Platform_Operations_Publishing_lk" />
+    <EntitySet Name="Platform_Operations_Video_lk" EntityType="LOSEntitiesDataModel.Platform_Operations_Video_lk" />
+    <EntitySet Name="Platform_Operations_Video_Scenarios" EntityType="LOSEntitiesDataModel.Platform_Operations_Video_Scenarios" />
+    <EntitySet Name="Platform_Ops_Local_Scenarios" EntityType="LOSEntitiesDataModel.Platform_Ops_Local_Scenarios" />
+    <EntitySet Name="Platform_Ops_OOH_Scenarios" EntityType="LOSEntitiesDataModel.Platform_Ops_OOH_Scenarios" />
+    <EntitySet Name="Platform_Ops_Publishing_Scenarios" EntityType="LOSEntitiesDataModel.Platform_Ops_Publishing_Scenarios" />
+    <EntitySet Name="PM_Duration" EntityType="LOSEntitiesDataModel.PM_Duration" />
+    <EntitySet Name="PM_Skills" EntityType="LOSEntitiesDataModel.PM_Skills" />
+    <EntitySet Name="Project_Management_Duration_lk" EntityType="LOSEntitiesDataModel.Project_Management_Duration_lk" />
+    <EntitySet Name="Project_Management_lk" EntityType="LOSEntitiesDataModel.Project_Management_lk" />
+    <EntitySet Name="Project_Management_Scenarios" EntityType="LOSEntitiesDataModel.Project_Management_Scenarios" />
+    <EntitySet Name="Project_Visibility" EntityType="LOSEntitiesDataModel.Project_Visibility" />
+    <EntitySet Name="Roles" EntityType="LOSEntitiesDataModel.Role" />
+    <EntitySet Name="Service_Level" EntityType="LOSEntitiesDataModel.Service_Level" />
+    <EntitySet Name="TAAG_Estimate_and_CPM_lk" EntityType="LOSEntitiesDataModel.TAAG_Estimate_and_CPM_lk" />
+    <EntitySet Name="TAAG_Estimate_and_CPM_Scenarios" EntityType="LOSEntitiesDataModel.TAAG_Estimate_and_CPM_Scenarios" />
+    <EntitySet Name="Tech_Expertise" EntityType="LOSEntitiesDataModel.Tech_Expertise" />
+    <EntitySet Name="User_Info" EntityType="LOSEntitiesDataModel.User_Info" />
+    <AssociationSet Name="FK_Bill_Pay_Traffic_lk_Bill_Pay" Association="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_lk_Bill_Pay">
+      <End Role="Bill_Pay" EntitySet="Bill_Pay" />
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_lk_Service_Level" Association="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_lk_Service_Level">
+      <End Role="Service_Level" EntitySet="Service_Level" />
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk" Association="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk">
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk1" Association="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk1">
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk2" Association="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk2">
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk3" Association="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk3">
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk4" Association="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk4">
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk5" Association="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk5">
+      <End Role="Bill_Pay_Traffic_lk" EntitySet="Bill_Pay_Traffic_lk" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_Business" Association="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Business">
+      <End Role="Business" EntitySet="Businesses" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Pay_Traffic_Scenarios_User_Info" Association="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Bill_Pay_Traffic_Scenarios" EntitySet="Bill_Pay_Traffic_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Business_Business_Status" Association="LOSEntitiesDataModel.FK_Business_Business_Status">
+      <End Role="Business_Status" EntitySet="Business_Status" />
+      <End Role="Business" EntitySet="Businesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Business_Business_Type" Association="LOSEntitiesDataModel.FK_Business_Business_Type">
+      <End Role="Business_Type" EntitySet="Business_Type" />
+      <End Role="Business" EntitySet="Businesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Business_Client" Association="LOSEntitiesDataModel.FK_Business_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Business" EntitySet="Businesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Business_User_Info" Association="LOSEntitiesDataModel.FK_Business_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Business" EntitySet="Businesses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Operations_Scenarios_Business" Association="LOSEntitiesDataModel.FK_Client_Operations_Scenarios_Business">
+      <End Role="Business" EntitySet="Businesses" />
+      <End Role="Client_Operations_Scenarios" EntitySet="Client_Operations_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Negotiated_And_Approved_Version_Business" Association="LOSEntitiesDataModel.FK_Negotiated_And_Approved_Version_Business">
+      <End Role="Business" EntitySet="Businesses" />
+      <End Role="Negotiated_And_Approved_Version" EntitySet="Negotiated_And_Approved_Version" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Operations_Digital_Scenarios_Business" Association="LOSEntitiesDataModel.FK_Platform_Operations_Digital_Scenarios_Business">
+      <End Role="Business" EntitySet="Businesses" />
+      <End Role="Platform_Operations_Digital_Scenarios" EntitySet="Platform_Operations_Digital_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Operations_Video_Scenarios_Business" Association="LOSEntitiesDataModel.FK_Platform_Operations_Video_Scenarios_Business">
+      <End Role="Business" EntitySet="Businesses" />
+      <End Role="Platform_Operations_Video_Scenarios" EntitySet="Platform_Operations_Video_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Ops_Local_Scenarios_Business" Association="LOSEntitiesDataModel.FK_Platform_Ops_Local_Scenarios_Business">
+      <End Role="Business" EntitySet="Businesses" />
+      <End Role="Platform_Ops_Local_Scenarios" EntitySet="Platform_Ops_Local_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Ops_OOH_Scenarios_Business" Association="LOSEntitiesDataModel.FK_Platform_Ops_OOH_Scenarios_Business">
+      <End Role="Business" EntitySet="Businesses" />
+      <End Role="Platform_Ops_OOH_Scenarios" EntitySet="Platform_Ops_OOH_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Ops_Publishing_Scenarios_Business" Association="LOSEntitiesDataModel.FK_Platform_Ops_Publishing_Scenarios_Business">
+      <End Role="Business" EntitySet="Businesses" />
+      <End Role="Platform_Ops_Publishing_Scenarios" EntitySet="Platform_Ops_Publishing_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_Scenarios_Business" Association="LOSEntitiesDataModel.FK_Project_Management_Scenarios_Business">
+      <End Role="Business" EntitySet="Businesses" />
+      <End Role="Project_Management_Scenarios" EntitySet="Project_Management_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAAG_Estimate_and_CPM_Scenarios_Business" Association="LOSEntitiesDataModel.FK_TAAG_Estimate_and_CPM_Scenarios_Business">
+      <End Role="Business" EntitySet="Businesses" />
+      <End Role="TAAG_Estimate_and_CPM_Scenarios" EntitySet="TAAG_Estimate_and_CPM_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Info_Client" Association="LOSEntitiesDataModel.FK_User_Info_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="User_Info" EntitySet="User_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Operations_Scenarios_Client_Operations_lk" Association="LOSEntitiesDataModel.FK_Client_Operations_Scenarios_Client_Operations_lk">
+      <End Role="Client_Operations_lk" EntitySet="Client_Operations_lk" />
+      <End Role="Client_Operations_Scenarios" EntitySet="Client_Operations_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Operations_Scenarios_User_Info" Association="LOSEntitiesDataModel.FK_Client_Operations_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Client_Operations_Scenarios" EntitySet="Client_Operations_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Negotiated_And_Approved_Version_Department" Association="LOSEntitiesDataModel.FK_Negotiated_And_Approved_Version_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Negotiated_And_Approved_Version" EntitySet="Negotiated_And_Approved_Version" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Info_Department" Association="LOSEntitiesDataModel.FK_User_Info_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="User_Info" EntitySet="User_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Negotiated_And_Approved_Version_User_Info" Association="LOSEntitiesDataModel.FK_Negotiated_And_Approved_Version_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Negotiated_And_Approved_Version" EntitySet="Negotiated_And_Approved_Version" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Operations_Digital_Scenarios_Platform_Operations_Digital_lk" Association="LOSEntitiesDataModel.FK_Platform_Operations_Digital_Scenarios_Platform_Operations_Digital_lk">
+      <End Role="Platform_Operations_Digital_lk" EntitySet="Platform_Operations_Digital_lk" />
+      <End Role="Platform_Operations_Digital_Scenarios" EntitySet="Platform_Operations_Digital_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Operations_Digital_Scenarios_User_Info" Association="LOSEntitiesDataModel.FK_Platform_Operations_Digital_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Platform_Operations_Digital_Scenarios" EntitySet="Platform_Operations_Digital_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Operations_Video_Scenarios_Platform_Operations_Video_lk" Association="LOSEntitiesDataModel.FK_Platform_Operations_Video_Scenarios_Platform_Operations_Video_lk">
+      <End Role="Platform_Operations_Video_lk" EntitySet="Platform_Operations_Video_lk" />
+      <End Role="Platform_Operations_Video_Scenarios" EntitySet="Platform_Operations_Video_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Operations_Video_Scenarios_User_Info" Association="LOSEntitiesDataModel.FK_Platform_Operations_Video_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Platform_Operations_Video_Scenarios" EntitySet="Platform_Operations_Video_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Ops_Local_Scenarios_User_Info" Association="LOSEntitiesDataModel.FK_Platform_Ops_Local_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Platform_Ops_Local_Scenarios" EntitySet="Platform_Ops_Local_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Ops_OOH_Scenarios_User_Info" Association="LOSEntitiesDataModel.FK_Platform_Ops_OOH_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Platform_Ops_OOH_Scenarios" EntitySet="Platform_Ops_OOH_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Platform_Ops_Publishing_Scenarios_User_Info" Association="LOSEntitiesDataModel.FK_Platform_Ops_Publishing_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Platform_Ops_Publishing_Scenarios" EntitySet="Platform_Ops_Publishing_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_lk_PM_Skills" Association="LOSEntitiesDataModel.FK_Project_Management_lk_PM_Skills">
+      <End Role="PM_Skills" EntitySet="PM_Skills" />
+      <End Role="Project_Management_lk" EntitySet="Project_Management_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_Duration_lk_Service_Level" Association="LOSEntitiesDataModel.FK_Project_Management_Duration_lk_Service_Level">
+      <End Role="Service_Level" EntitySet="Service_Level" />
+      <End Role="Project_Management_Duration_lk" EntitySet="Project_Management_Duration_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_Scenarios_Project_Management_Duration_lk" Association="LOSEntitiesDataModel.FK_Project_Management_Scenarios_Project_Management_Duration_lk">
+      <End Role="Project_Management_Duration_lk" EntitySet="Project_Management_Duration_lk" />
+      <End Role="Project_Management_Scenarios" EntitySet="Project_Management_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_lk_Project_Visibility" Association="LOSEntitiesDataModel.FK_Project_Management_lk_Project_Visibility">
+      <End Role="Project_Visibility" EntitySet="Project_Visibility" />
+      <End Role="Project_Management_lk" EntitySet="Project_Management_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_lk_Service_Level" Association="LOSEntitiesDataModel.FK_Project_Management_lk_Service_Level">
+      <End Role="Service_Level" EntitySet="Service_Level" />
+      <End Role="Project_Management_lk" EntitySet="Project_Management_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_lk_Tech_Expertise" Association="LOSEntitiesDataModel.FK_Project_Management_lk_Tech_Expertise">
+      <End Role="Tech_Expertise" EntitySet="Tech_Expertise" />
+      <End Role="Project_Management_lk" EntitySet="Project_Management_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_Scenarios_Project_Management_lk" Association="LOSEntitiesDataModel.FK_Project_Management_Scenarios_Project_Management_lk">
+      <End Role="Project_Management_lk" EntitySet="Project_Management_lk" />
+      <End Role="Project_Management_Scenarios" EntitySet="Project_Management_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Project_Management_Scenarios_User_Info" Association="LOSEntitiesDataModel.FK_Project_Management_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="Project_Management_Scenarios" EntitySet="Project_Management_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Info_Role" Association="LOSEntitiesDataModel.FK_User_Info_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User_Info" EntitySet="User_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAAG_Estimate_and_CPM_lk_Service_Level" Association="LOSEntitiesDataModel.FK_TAAG_Estimate_and_CPM_lk_Service_Level">
+      <End Role="Service_Level" EntitySet="Service_Level" />
+      <End Role="TAAG_Estimate_and_CPM_lk" EntitySet="TAAG_Estimate_and_CPM_lk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAAG_Estimate_and_CPM_Scenarios_TAAG_Estimate_and_CPM_lk" Association="LOSEntitiesDataModel.FK_TAAG_Estimate_and_CPM_Scenarios_TAAG_Estimate_and_CPM_lk">
+      <End Role="TAAG_Estimate_and_CPM_lk" EntitySet="TAAG_Estimate_and_CPM_lk" />
+      <End Role="TAAG_Estimate_and_CPM_Scenarios" EntitySet="TAAG_Estimate_and_CPM_Scenarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TAAG_Estimate_and_CPM_Scenarios_User_Info" Association="LOSEntitiesDataModel.FK_TAAG_Estimate_and_CPM_Scenarios_User_Info">
+      <End Role="User_Info" EntitySet="User_Info" />
+      <End Role="TAAG_Estimate_and_CPM_Scenarios" EntitySet="TAAG_Estimate_and_CPM_Scenarios" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bill_Pay">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bill_Pay_Traffic_lk" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_lk_Bill_Pay" FromRole="Bill_Pay" ToRole="Bill_Pay_Traffic_lk" />
+  </EntityType>
+  <EntityType Name="Bill_Pay_Traffic_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Bill_Pay_Id" Type="Int32" />
+    <Property Name="Spending" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Director" Type="Double" />
+    <Property Name="Assistant_Director" Type="Double" />
+    <Property Name="Liaison" Type="Double" />
+    <Property Name="Lead_Liaison" Type="Double" />
+    <Property Name="Service_Level_Id" Type="Int32" />
+    <NavigationProperty Name="Bill_Pay" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_lk_Bill_Pay" FromRole="Bill_Pay_Traffic_lk" ToRole="Bill_Pay" />
+    <NavigationProperty Name="Service_Level" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_lk_Service_Level" FromRole="Bill_Pay_Traffic_lk" ToRole="Service_Level" />
+    <NavigationProperty Name="Bill_Pay_Traffic_Scenarios" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk" FromRole="Bill_Pay_Traffic_lk" ToRole="Bill_Pay_Traffic_Scenarios" />
+    <NavigationProperty Name="Bill_Pay_Traffic_Scenarios1" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk1" FromRole="Bill_Pay_Traffic_lk" ToRole="Bill_Pay_Traffic_Scenarios" />
+    <NavigationProperty Name="Bill_Pay_Traffic_Scenarios2" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk2" FromRole="Bill_Pay_Traffic_lk" ToRole="Bill_Pay_Traffic_Scenarios" />
+    <NavigationProperty Name="Bill_Pay_Traffic_Scenarios3" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk3" FromRole="Bill_Pay_Traffic_lk" ToRole="Bill_Pay_Traffic_Scenarios" />
+    <NavigationProperty Name="Bill_Pay_Traffic_Scenarios4" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk4" FromRole="Bill_Pay_Traffic_lk" ToRole="Bill_Pay_Traffic_Scenarios" />
+    <NavigationProperty Name="Bill_Pay_Traffic_Scenarios5" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk5" FromRole="Bill_Pay_Traffic_lk" ToRole="Bill_Pay_Traffic_Scenarios" />
+  </EntityType>
+  <EntityType Name="Bill_Pay_Traffic_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Scenario_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Digital_Bill_Id" Type="Int32" />
+    <Property Name="National_Bill_Id" Type="Int32" />
+    <Property Name="OOH_Bill_Id" Type="Int32" />
+    <Property Name="Print_Bill_Id" Type="Int32" />
+    <Property Name="Broadcast_Traffic_Id" Type="Int32" />
+    <Property Name="OOH_Traffic_Id" Type="Int32" />
+    <Property Name="Business_Id" Type="Int32" />
+    <Property Name="Is_Final" Type="Boolean" />
+    <Property Name="Created_By" Type="Int32" />
+    <NavigationProperty Name="Bill_Pay_Traffic_lk" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk" FromRole="Bill_Pay_Traffic_Scenarios" ToRole="Bill_Pay_Traffic_lk" />
+    <NavigationProperty Name="Bill_Pay_Traffic_lk1" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk1" FromRole="Bill_Pay_Traffic_Scenarios" ToRole="Bill_Pay_Traffic_lk" />
+    <NavigationProperty Name="Bill_Pay_Traffic_lk2" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk2" FromRole="Bill_Pay_Traffic_Scenarios" ToRole="Bill_Pay_Traffic_lk" />
+    <NavigationProperty Name="Bill_Pay_Traffic_lk3" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk3" FromRole="Bill_Pay_Traffic_Scenarios" ToRole="Bill_Pay_Traffic_lk" />
+    <NavigationProperty Name="Bill_Pay_Traffic_lk4" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk4" FromRole="Bill_Pay_Traffic_Scenarios" ToRole="Bill_Pay_Traffic_lk" />
+    <NavigationProperty Name="Bill_Pay_Traffic_lk5" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk5" FromRole="Bill_Pay_Traffic_Scenarios" ToRole="Bill_Pay_Traffic_lk" />
+    <NavigationProperty Name="Business" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Business" FromRole="Bill_Pay_Traffic_Scenarios" ToRole="Business" />
+    <NavigationProperty Name="User_Info" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_User_Info" FromRole="Bill_Pay_Traffic_Scenarios" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Business">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Year" Type="Int32" />
+    <Property Name="Date_Created" Type="DateTime" Precision="0" />
+    <Property Name="Pitched_Successful" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Client" Type="Int32" />
+    <Property Name="Created_By" Type="Int32" />
+    <NavigationProperty Name="Bill_Pay_Traffic_Scenarios" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_Business" FromRole="Business" ToRole="Bill_Pay_Traffic_Scenarios" />
+    <NavigationProperty Name="Business_Status" Relationship="LOSEntitiesDataModel.FK_Business_Business_Status" FromRole="Business" ToRole="Business_Status" />
+    <NavigationProperty Name="Business_Type" Relationship="LOSEntitiesDataModel.FK_Business_Business_Type" FromRole="Business" ToRole="Business_Type" />
+    <NavigationProperty Name="Client1" Relationship="LOSEntitiesDataModel.FK_Business_Client" FromRole="Business" ToRole="Client" />
+    <NavigationProperty Name="User_Info" Relationship="LOSEntitiesDataModel.FK_Business_User_Info" FromRole="Business" ToRole="User_Info" />
+    <NavigationProperty Name="Client_Operations_Scenarios" Relationship="LOSEntitiesDataModel.FK_Client_Operations_Scenarios_Business" FromRole="Business" ToRole="Client_Operations_Scenarios" />
+    <NavigationProperty Name="Negotiated_And_Approved_Version" Relationship="LOSEntitiesDataModel.FK_Negotiated_And_Approved_Version_Business" FromRole="Business" ToRole="Negotiated_And_Approved_Version" />
+    <NavigationProperty Name="Platform_Operations_Digital_Scenarios" Relationship="LOSEntitiesDataModel.FK_Platform_Operations_Digital_Scenarios_Business" FromRole="Business" ToRole="Platform_Operations_Digital_Scenarios" />
+    <NavigationProperty Name="Platform_Operations_Video_Scenarios" Relationship="LOSEntitiesDataModel.FK_Platform_Operations_Video_Scenarios_Business" FromRole="Business" ToRole="Platform_Operations_Video_Scenarios" />
+    <NavigationProperty Name="Platform_Ops_Local_Scenarios" Relationship="LOSEntitiesDataModel.FK_Platform_Ops_Local_Scenarios_Business" FromRole="Business" ToRole="Platform_Ops_Local_Scenarios" />
+    <NavigationProperty Name="Platform_Ops_OOH_Scenarios" Relationship="LOSEntitiesDataModel.FK_Platform_Ops_OOH_Scenarios_Business" FromRole="Business" ToRole="Platform_Ops_OOH_Scenarios" />
+    <NavigationProperty Name="Platform_Ops_Publishing_Scenarios" Relationship="LOSEntitiesDataModel.FK_Platform_Ops_Publishing_Scenarios_Business" FromRole="Business" ToRole="Platform_Ops_Publishing_Scenarios" />
+    <NavigationProperty Name="Project_Management_Scenarios" Relationship="LOSEntitiesDataModel.FK_Project_Management_Scenarios_Business" FromRole="Business" ToRole="Project_Management_Scenarios" />
+    <NavigationProperty Name="TAAG_Estimate_and_CPM_Scenarios" Relationship="LOSEntitiesDataModel.FK_TAAG_Estimate_and_CPM_Scenarios_Business" FromRole="Business" ToRole="TAAG_Estimate_and_CPM_Scenarios" />
+  </EntityType>
+  <EntityType Name="Business_Status">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Businesses" Relationship="LOSEntitiesDataModel.FK_Business_Business_Status" FromRole="Business_Status" ToRole="Business" />
+  </EntityType>
+  <EntityType Name="Business_Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Businesses" Relationship="LOSEntitiesDataModel.FK_Business_Business_Type" FromRole="Business_Type" ToRole="Business" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Businesses" Relationship="LOSEntitiesDataModel.FK_Business_Client" FromRole="Client" ToRole="Business" />
+    <NavigationProperty Name="User_Info" Relationship="LOSEntitiesDataModel.FK_User_Info_Client" FromRole="Client" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Client_Operations_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Service_Level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Draft_Billing" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Budget_Reporting" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Basic_Competitive" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Audit_Requests" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Authorizations" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Systems_Administration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Basic_Data_Pulls" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Onboarding" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Finance_Support" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Customized_RACI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Media_Landscape_Support" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Additional_Competitive" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Brands_And_Clients" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Additional_Templatized_Reporting" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Global_Support" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Modeling_Data_Pulls" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TOPS_In_House_Consultancy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PL_Support" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mgmt_Of_Cross_Practice_Tasks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dashboards" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Customized_Reporting" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Director" Type="Double" />
+    <Property Name="Associate_Director" Type="Double" />
+    <Property Name="Supervisor" Type="Double" />
+    <Property Name="Associate" Type="Double" />
+    <NavigationProperty Name="Client_Operations_Scenarios" Relationship="LOSEntitiesDataModel.FK_Client_Operations_Scenarios_Client_Operations_lk" FromRole="Client_Operations_lk" ToRole="Client_Operations_Scenarios" />
+  </EntityType>
+  <EntityType Name="Client_Operations_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Client_Operations_Id" Type="Int32" />
+    <Property Name="Business_Id" Type="Int32" />
+    <Property Name="Is_Final" Type="Boolean" />
+    <Property Name="Scenario_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By" Type="Int32" />
+    <NavigationProperty Name="Business" Relationship="LOSEntitiesDataModel.FK_Client_Operations_Scenarios_Business" FromRole="Client_Operations_Scenarios" ToRole="Business" />
+    <NavigationProperty Name="Client_Operations_lk" Relationship="LOSEntitiesDataModel.FK_Client_Operations_Scenarios_Client_Operations_lk" FromRole="Client_Operations_Scenarios" ToRole="Client_Operations_lk" />
+    <NavigationProperty Name="User_Info" Relationship="LOSEntitiesDataModel.FK_Client_Operations_Scenarios_User_Info" FromRole="Client_Operations_Scenarios" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Negotiated_And_Approved_Version" Relationship="LOSEntitiesDataModel.FK_Negotiated_And_Approved_Version_Department" FromRole="Department" ToRole="Negotiated_And_Approved_Version" />
+    <NavigationProperty Name="User_Info" Relationship="LOSEntitiesDataModel.FK_User_Info_Department" FromRole="Department" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Negotiated_And_Approved_Version">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Department_Id" Type="Int32" />
+    <Property Name="Director" Type="Double" />
+    <Property Name="Assistant_Director" Type="Double" />
+    <Property Name="Supervisor" Type="Double" />
+    <Property Name="Associate" Type="Double" />
+    <Property Name="Liaison" Type="Double" />
+    <Property Name="Lead_Liaison" Type="Double" />
+    <Property Name="Business_Id" Type="Int32" />
+    <Property Name="Approved_By" Type="Int32" />
+    <Property Name="Approved_On" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Business" Relationship="LOSEntitiesDataModel.FK_Negotiated_And_Approved_Version_Business" FromRole="Negotiated_And_Approved_Version" ToRole="Business" />
+    <NavigationProperty Name="Department" Relationship="LOSEntitiesDataModel.FK_Negotiated_And_Approved_Version_Department" FromRole="Negotiated_And_Approved_Version" ToRole="Department" />
+    <NavigationProperty Name="User_Info" Relationship="LOSEntitiesDataModel.FK_Negotiated_And_Approved_Version_User_Info" FromRole="Negotiated_And_Approved_Version" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Platform_Operations_Digital_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NET_Billings" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Associate" Type="Double" Nullable="false" />
+    <Property Name="Supervisor" Type="Double" Nullable="false" />
+    <Property Name="Assistant_Director" Type="Double" Nullable="false" />
+    <Property Name="Director" Type="Double" />
+    <NavigationProperty Name="Platform_Operations_Digital_Scenarios" Relationship="LOSEntitiesDataModel.FK_Platform_Operations_Digital_Scenarios_Platform_Operations_Digital_lk" FromRole="Platform_Operations_Digital_lk" ToRole="Platform_Operations_Digital_Scenarios" />
+  </EntityType>
+  <EntityType Name="Platform_Operations_Digital_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Business_Id" Type="Int32" />
+    <Property Name="Digital_Id" Type="Int32" />
+    <Property Name="Is_Final" Type="Boolean" />
+    <Property Name="Scenario_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By" Type="Int32" />
+    <NavigationProperty Name="Business" Relationship="LOSEntitiesDataModel.FK_Platform_Operations_Digital_Scenarios_Business" FromRole="Platform_Operations_Digital_Scenarios" ToRole="Business" />
+    <NavigationProperty Name="Platform_Operations_Digital_lk" Relationship="LOSEntitiesDataModel.FK_Platform_Operations_Digital_Scenarios_Platform_Operations_Digital_lk" FromRole="Platform_Operations_Digital_Scenarios" ToRole="Platform_Operations_Digital_lk" />
+    <NavigationProperty Name="User_Info" Relationship="LOSEntitiesDataModel.FK_Platform_Operations_Digital_Scenarios_User_Info" FromRole="Platform_Operations_Digital_Scenarios" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Platform_Operations_Local_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FTE_Position" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Local_FTE_Multiplier" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Platform_Operations_OOH_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FTE_Position" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OOH_FTE_Multiplier" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Platform_Operations_Publishing_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FTE_Position" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Publishing_FTE_Multiplier" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Platform_Operations_Video_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NET_Billings" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Associate" Type="Double" Nullable="false" />
+    <Property Name="Supervisor" Type="Double" Nullable="false" />
+    <Property Name="Associate_Director" Type="Double" Nullable="false" />
+    <Property Name="Director" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Platform_Operations_Video_Scenarios" Relationship="LOSEntitiesDataModel.FK_Platform_Operations_Video_Scenarios_Platform_Operations_Video_lk" FromRole="Platform_Operations_Video_lk" ToRole="Platform_Operations_Video_Scenarios" />
+  </EntityType>
+  <EntityType Name="Platform_Operations_Video_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Video_Id" Type="Int32" />
+    <Property Name="Business_Id" Type="Int32" />
+    <Property Name="Is_Final" Type="Boolean" />
+    <Property Name="Scenario_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By" Type="Int32" />
+    <NavigationProperty Name="Business" Relationship="LOSEntitiesDataModel.FK_Platform_Operations_Video_Scenarios_Business" FromRole="Platform_Operations_Video_Scenarios" ToRole="Business" />
+    <NavigationProperty Name="Platform_Operations_Video_lk" Relationship="LOSEntitiesDataModel.FK_Platform_Operations_Video_Scenarios_Platform_Operations_Video_lk" FromRole="Platform_Operations_Video_Scenarios" ToRole="Platform_Operations_Video_lk" />
+    <NavigationProperty Name="User_Info" Relationship="LOSEntitiesDataModel.FK_Platform_Operations_Video_Scenarios_User_Info" FromRole="Platform_Operations_Video_Scenarios" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Platform_Ops_Local_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Director" Type="Double" />
+    <Property Name="Assistant_Director" Type="Double" />
+    <Property Name="Supervisor" Type="Double" />
+    <Property Name="Associate" Type="Double" />
+    <Property Name="Gross_Billings" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Local_FTE" Type="Double" />
+    <Property Name="Scenario_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Business_Id" Type="Int32" />
+    <Property Name="Is_Final" Type="Boolean" />
+    <Property Name="Created_By" Type="Int32" />
+    <NavigationProperty Name="Business" Relationship="LOSEntitiesDataModel.FK_Platform_Ops_Local_Scenarios_Business" FromRole="Platform_Ops_Local_Scenarios" ToRole="Business" />
+    <NavigationProperty Name="User_Info" Relationship="LOSEntitiesDataModel.FK_Platform_Ops_Local_Scenarios_User_Info" FromRole="Platform_Ops_Local_Scenarios" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Platform_Ops_OOH_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Director" Type="Double" />
+    <Property Name="Assistant_Director" Type="Double" />
+    <Property Name="Supervisor" Type="Double" />
+    <Property Name="Associate" Type="Double" />
+    <Property Name="NET_Billings" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Scenario_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Business_Id" Type="Int32" />
+    <Property Name="Is_Final" Type="Boolean" />
+    <Property Name="Created_By" Type="Int32" />
+    <NavigationProperty Name="Business" Relationship="LOSEntitiesDataModel.FK_Platform_Ops_OOH_Scenarios_Business" FromRole="Platform_Ops_OOH_Scenarios" ToRole="Business" />
+    <NavigationProperty Name="User_Info" Relationship="LOSEntitiesDataModel.FK_Platform_Ops_OOH_Scenarios_User_Info" FromRole="Platform_Ops_OOH_Scenarios" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Platform_Ops_Publishing_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Director" Type="Double" />
+    <Property Name="Assistant_Director" Type="Double" />
+    <Property Name="Supervisor" Type="Double" />
+    <Property Name="Associate" Type="Double" />
+    <Property Name="NET_Billings" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Scenario_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Business_Id" Type="Int32" />
+    <Property Name="Is_Final" Type="Boolean" />
+    <Property Name="Created_By" Type="Int32" />
+    <NavigationProperty Name="Business" Relationship="LOSEntitiesDataModel.FK_Platform_Ops_Publishing_Scenarios_Business" FromRole="Platform_Ops_Publishing_Scenarios" ToRole="Business" />
+    <NavigationProperty Name="User_Info" Relationship="LOSEntitiesDataModel.FK_Platform_Ops_Publishing_Scenarios_User_Info" FromRole="Platform_Ops_Publishing_Scenarios" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="PM_Duration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Duration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PM_Skills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Skill_Level" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Project_Management_lk" Relationship="LOSEntitiesDataModel.FK_Project_Management_lk_PM_Skills" FromRole="PM_Skills" ToRole="Project_Management_lk" />
+  </EntityType>
+  <EntityType Name="Project_Management_Duration_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Director" Type="Double" />
+    <Property Name="Assistant_Director" Type="Double" />
+    <Property Name="Supervisor" Type="Double" />
+    <Property Name="Associate" Type="Double" />
+    <Property Name="PM_Duration_Id" Type="Int32" />
+    <Property Name="Service_Level_Id" Type="Int32" />
+    <NavigationProperty Name="Service_Level" Relationship="LOSEntitiesDataModel.FK_Project_Management_Duration_lk_Service_Level" FromRole="Project_Management_Duration_lk" ToRole="Service_Level" />
+    <NavigationProperty Name="Project_Management_Scenarios" Relationship="LOSEntitiesDataModel.FK_Project_Management_Scenarios_Project_Management_Duration_lk" FromRole="Project_Management_Duration_lk" ToRole="Project_Management_Scenarios" />
+  </EntityType>
+  <EntityType Name="Project_Management_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PM_Skills_Id" Type="Int32" />
+    <Property Name="Project_Visibility_Id" Type="Int32" />
+    <Property Name="Tech_Expertise_Id" Type="Int32" />
+    <Property Name="Service_Level_Id" Type="Int32" />
+    <NavigationProperty Name="PM_Skills" Relationship="LOSEntitiesDataModel.FK_Project_Management_lk_PM_Skills" FromRole="Project_Management_lk" ToRole="PM_Skills" />
+    <NavigationProperty Name="Project_Visibility" Relationship="LOSEntitiesDataModel.FK_Project_Management_lk_Project_Visibility" FromRole="Project_Management_lk" ToRole="Project_Visibility" />
+    <NavigationProperty Name="Service_Level" Relationship="LOSEntitiesDataModel.FK_Project_Management_lk_Service_Level" FromRole="Project_Management_lk" ToRole="Service_Level" />
+    <NavigationProperty Name="Tech_Expertise" Relationship="LOSEntitiesDataModel.FK_Project_Management_lk_Tech_Expertise" FromRole="Project_Management_lk" ToRole="Tech_Expertise" />
+    <NavigationProperty Name="Project_Management_Scenarios" Relationship="LOSEntitiesDataModel.FK_Project_Management_Scenarios_Project_Management_lk" FromRole="Project_Management_lk" ToRole="Project_Management_Scenarios" />
+  </EntityType>
+  <EntityType Name="Project_Management_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Project_Management_Id" Type="Int32" />
+    <Property Name="Project_Management_Duration_Id" Type="Int32" />
+    <Property Name="Business_Id" Type="Int32" />
+    <Property Name="Is_Final" Type="Boolean" />
+    <Property Name="Scenario_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By" Type="Int32" />
+    <NavigationProperty Name="Business" Relationship="LOSEntitiesDataModel.FK_Project_Management_Scenarios_Business" FromRole="Project_Management_Scenarios" ToRole="Business" />
+    <NavigationProperty Name="Project_Management_Duration_lk" Relationship="LOSEntitiesDataModel.FK_Project_Management_Scenarios_Project_Management_Duration_lk" FromRole="Project_Management_Scenarios" ToRole="Project_Management_Duration_lk" />
+    <NavigationProperty Name="Project_Management_lk" Relationship="LOSEntitiesDataModel.FK_Project_Management_Scenarios_Project_Management_lk" FromRole="Project_Management_Scenarios" ToRole="Project_Management_lk" />
+    <NavigationProperty Name="User_Info" Relationship="LOSEntitiesDataModel.FK_Project_Management_Scenarios_User_Info" FromRole="Project_Management_Scenarios" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Project_Visibility">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Level" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Project_Management_lk" Relationship="LOSEntitiesDataModel.FK_Project_Management_lk_Project_Visibility" FromRole="Project_Visibility" ToRole="Project_Management_lk" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Role_Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User_Info" Relationship="LOSEntitiesDataModel.FK_User_Info_Role" FromRole="Role" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Service_Level">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Service" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bill_Pay_Traffic_lk" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_lk_Service_Level" FromRole="Service_Level" ToRole="Bill_Pay_Traffic_lk" />
+    <NavigationProperty Name="Project_Management_Duration_lk" Relationship="LOSEntitiesDataModel.FK_Project_Management_Duration_lk_Service_Level" FromRole="Service_Level" ToRole="Project_Management_Duration_lk" />
+    <NavigationProperty Name="Project_Management_lk" Relationship="LOSEntitiesDataModel.FK_Project_Management_lk_Service_Level" FromRole="Service_Level" ToRole="Project_Management_lk" />
+    <NavigationProperty Name="TAAG_Estimate_and_CPM_lk" Relationship="LOSEntitiesDataModel.FK_TAAG_Estimate_and_CPM_lk_Service_Level" FromRole="Service_Level" ToRole="TAAG_Estimate_and_CPM_lk" />
+  </EntityType>
+  <EntityType Name="TAAG_Estimate_and_CPM_lk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Spending" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Service_Level_Id" Type="Int32" />
+    <Property Name="Director" Type="Double" />
+    <Property Name="Associate_Director" Type="Double" />
+    <Property Name="Supervisor_Analyst" Type="Double" />
+    <Property Name="Supervisor_Tech_Ops" Type="Double" />
+    <Property Name="Associate_Analyst" Type="Double" />
+    <Property Name="Associate_Tech_Ops" Type="Double" />
+    <Property Name="Recommended_CPM" Type="Double" />
+    <NavigationProperty Name="Service_Level" Relationship="LOSEntitiesDataModel.FK_TAAG_Estimate_and_CPM_lk_Service_Level" FromRole="TAAG_Estimate_and_CPM_lk" ToRole="Service_Level" />
+    <NavigationProperty Name="TAAG_Estimate_and_CPM_Scenarios" Relationship="LOSEntitiesDataModel.FK_TAAG_Estimate_and_CPM_Scenarios_TAAG_Estimate_and_CPM_lk" FromRole="TAAG_Estimate_and_CPM_lk" ToRole="TAAG_Estimate_and_CPM_Scenarios" />
+  </EntityType>
+  <EntityType Name="TAAG_Estimate_and_CPM_Scenarios">
+    <Key>
+      <PropertyRef Name="Scenario_Id" />
+    </Key>
+    <Property Name="Scenario_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TAAG_Estimate_and_CPM_Id" Type="Int32" />
+    <Property Name="Business_Id" Type="Int32" />
+    <Property Name="Is_Final" Type="Boolean" />
+    <Property Name="Scenario_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created_By" Type="Int32" />
+    <NavigationProperty Name="Business" Relationship="LOSEntitiesDataModel.FK_TAAG_Estimate_and_CPM_Scenarios_Business" FromRole="TAAG_Estimate_and_CPM_Scenarios" ToRole="Business" />
+    <NavigationProperty Name="TAAG_Estimate_and_CPM_lk" Relationship="LOSEntitiesDataModel.FK_TAAG_Estimate_and_CPM_Scenarios_TAAG_Estimate_and_CPM_lk" FromRole="TAAG_Estimate_and_CPM_Scenarios" ToRole="TAAG_Estimate_and_CPM_lk" />
+    <NavigationProperty Name="User_Info" Relationship="LOSEntitiesDataModel.FK_TAAG_Estimate_and_CPM_Scenarios_User_Info" FromRole="TAAG_Estimate_and_CPM_Scenarios" ToRole="User_Info" />
+  </EntityType>
+  <EntityType Name="Tech_Expertise">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Project_Management_lk" Relationship="LOSEntitiesDataModel.FK_Project_Management_lk_Tech_Expertise" FromRole="Tech_Expertise" ToRole="Project_Management_lk" />
+  </EntityType>
+  <EntityType Name="User_Info">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <Property Name="ClientId" Type="Int32" />
+    <NavigationProperty Name="Bill_Pay_Traffic_Scenarios" Relationship="LOSEntitiesDataModel.FK_Bill_Pay_Traffic_Scenarios_User_Info" FromRole="User_Info" ToRole="Bill_Pay_Traffic_Scenarios" />
+    <NavigationProperty Name="Businesses" Relationship="LOSEntitiesDataModel.FK_Business_User_Info" FromRole="User_Info" ToRole="Business" />
+    <NavigationProperty Name="Client" Relationship="LOSEntitiesDataModel.FK_User_Info_Client" FromRole="User_Info" ToRole="Client" />
+    <NavigationProperty Name="Client_Operations_Scenarios" Relationship="LOSEntitiesDataModel.FK_Client_Operations_Scenarios_User_Info" FromRole="User_Info" ToRole="Client_Operations_Scenarios" />
+    <NavigationProperty Name="Department" Relationship="LOSEntitiesDataModel.FK_User_Info_Department" FromRole="User_Info" ToRole="Department" />
+    <NavigationProperty Name="Negotiated_And_Approved_Version" Relationship="LOSEntitiesDataModel.FK_Negotiated_And_Approved_Version_User_Info" FromRole="User_Info" ToRole="Negotiated_And_Approved_Version" />
+    <NavigationProperty Name="Platform_Operations_Digital_Scenarios" Relationship="LOSEntitiesDataModel.FK_Platform_Operations_Digital_Scenarios_User_Info" FromRole="User_Info" ToRole="Platform_Operations_Digital_Scenarios" />
+    <NavigationProperty Name="Platform_Operations_Video_Scenarios" Relationship="LOSEntitiesDataModel.FK_Platform_Operations_Video_Scenarios_User_Info" FromRole="User_Info" ToRole="Platform_Operations_Video_Scenarios" />
+    <NavigationProperty Name="Platform_Ops_Local_Scenarios" Relationship="LOSEntitiesDataModel.FK_Platform_Ops_Local_Scenarios_User_Info" FromRole="User_Info" ToRole="Platform_Ops_Local_Scenarios" />
+    <NavigationProperty Name="Platform_Ops_OOH_Scenarios" Relationship="LOSEntitiesDataModel.FK_Platform_Ops_OOH_Scenarios_User_Info" FromRole="User_Info" ToRole="Platform_Ops_OOH_Scenarios" />
+    <NavigationProperty Name="Platform_Ops_Publishing_Scenarios" Relationship="LOSEntitiesDataModel.FK_Platform_Ops_Publishing_Scenarios_User_Info" FromRole="User_Info" ToRole="Platform_Ops_Publishing_Scenarios" />
+    <NavigationProperty Name="Project_Management_Scenarios" Relationship="LOSEntitiesDataModel.FK_Project_Management_Scenarios_User_Info" FromRole="User_Info" ToRole="Project_Management_Scenarios" />
+    <NavigationProperty Name="Role" Relationship="LOSEntitiesDataModel.FK_User_Info_Role" FromRole="User_Info" ToRole="Role" />
+    <NavigationProperty Name="TAAG_Estimate_and_CPM_Scenarios" Relationship="LOSEntitiesDataModel.FK_TAAG_Estimate_and_CPM_Scenarios_User_Info" FromRole="User_Info" ToRole="TAAG_Estimate_and_CPM_Scenarios" />
+  </EntityType>
+  <Association Name="FK_Bill_Pay_Traffic_lk_Bill_Pay">
+    <End Type="LOSEntitiesDataModel.Bill_Pay" Role="Bill_Pay" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_lk" Role="Bill_Pay_Traffic_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Pay">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Bill_Pay_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_lk_Service_Level">
+    <End Type="LOSEntitiesDataModel.Service_Level" Role="Service_Level" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_lk" Role="Bill_Pay_Traffic_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service_Level">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Service_Level_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk">
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_lk" Role="Bill_Pay_Traffic_lk" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_Scenarios" Role="Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="Digital_Bill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk1">
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_lk" Role="Bill_Pay_Traffic_lk" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_Scenarios" Role="Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="National_Bill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk2">
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_lk" Role="Bill_Pay_Traffic_lk" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_Scenarios" Role="Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="OOH_Bill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk3">
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_lk" Role="Bill_Pay_Traffic_lk" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_Scenarios" Role="Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="Print_Bill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk4">
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_lk" Role="Bill_Pay_Traffic_lk" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_Scenarios" Role="Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="Broadcast_Traffic_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_Bill_Pay_Traffic_lk5">
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_lk" Role="Bill_Pay_Traffic_lk" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_Scenarios" Role="Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_Pay_Traffic_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="OOH_Traffic_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_Business">
+    <End Type="LOSEntitiesDataModel.Business" Role="Business" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_Scenarios" Role="Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Pay_Traffic_Scenarios_User_Info">
+    <End Type="LOSEntitiesDataModel.User_Info" Role="User_Info" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Bill_Pay_Traffic_Scenarios" Role="Bill_Pay_Traffic_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bill_Pay_Traffic_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Business_Business_Status">
+    <End Type="LOSEntitiesDataModel.Business_Status" Role="Business_Status" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Business" Role="Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business_Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Business">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Business_Business_Type">
+    <End Type="LOSEntitiesDataModel.Business_Type" Role="Business_Type" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Business" Role="Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business_Type">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Business">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Business_Client">
+    <End Type="LOSEntitiesDataModel.Client" Role="Client" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Business" Role="Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Business">
+        <PropertyRef Name="Client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Business_User_Info">
+    <End Type="LOSEntitiesDataModel.User_Info" Role="User_Info" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Business" Role="Business" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Business">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_Operations_Scenarios_Business">
+    <End Type="LOSEntitiesDataModel.Business" Role="Business" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Client_Operations_Scenarios" Role="Client_Operations_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client_Operations_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Negotiated_And_Approved_Version_Business">
+    <End Type="LOSEntitiesDataModel.Business" Role="Business" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Negotiated_And_Approved_Version" Role="Negotiated_And_Approved_Version" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Negotiated_And_Approved_Version">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Operations_Digital_Scenarios_Business">
+    <End Type="LOSEntitiesDataModel.Business" Role="Business" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Platform_Operations_Digital_Scenarios" Role="Platform_Operations_Digital_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Operations_Digital_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Operations_Video_Scenarios_Business">
+    <End Type="LOSEntitiesDataModel.Business" Role="Business" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Platform_Operations_Video_Scenarios" Role="Platform_Operations_Video_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Operations_Video_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Ops_Local_Scenarios_Business">
+    <End Type="LOSEntitiesDataModel.Business" Role="Business" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Platform_Ops_Local_Scenarios" Role="Platform_Ops_Local_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Ops_Local_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Ops_OOH_Scenarios_Business">
+    <End Type="LOSEntitiesDataModel.Business" Role="Business" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Platform_Ops_OOH_Scenarios" Role="Platform_Ops_OOH_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Ops_OOH_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Ops_Publishing_Scenarios_Business">
+    <End Type="LOSEntitiesDataModel.Business" Role="Business" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Platform_Ops_Publishing_Scenarios" Role="Platform_Ops_Publishing_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Ops_Publishing_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_Scenarios_Business">
+    <End Type="LOSEntitiesDataModel.Business" Role="Business" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Project_Management_Scenarios" Role="Project_Management_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAAG_Estimate_and_CPM_Scenarios_Business">
+    <End Type="LOSEntitiesDataModel.Business" Role="Business" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.TAAG_Estimate_and_CPM_Scenarios" Role="TAAG_Estimate_and_CPM_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Business">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TAAG_Estimate_and_CPM_Scenarios">
+        <PropertyRef Name="Business_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Info_Client">
+    <End Type="LOSEntitiesDataModel.Client" Role="Client" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.User_Info" Role="User_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Info">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_Operations_Scenarios_Client_Operations_lk">
+    <End Type="LOSEntitiesDataModel.Client_Operations_lk" Role="Client_Operations_lk" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Client_Operations_Scenarios" Role="Client_Operations_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client_Operations_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client_Operations_Scenarios">
+        <PropertyRef Name="Client_Operations_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_Operations_Scenarios_User_Info">
+    <End Type="LOSEntitiesDataModel.User_Info" Role="User_Info" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Client_Operations_Scenarios" Role="Client_Operations_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Client_Operations_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Negotiated_And_Approved_Version_Department">
+    <End Type="LOSEntitiesDataModel.Department" Role="Department" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Negotiated_And_Approved_Version" Role="Negotiated_And_Approved_Version" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Negotiated_And_Approved_Version">
+        <PropertyRef Name="Department_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Info_Department">
+    <End Type="LOSEntitiesDataModel.Department" Role="Department" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.User_Info" Role="User_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Info">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Negotiated_And_Approved_Version_User_Info">
+    <End Type="LOSEntitiesDataModel.User_Info" Role="User_Info" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Negotiated_And_Approved_Version" Role="Negotiated_And_Approved_Version" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Negotiated_And_Approved_Version">
+        <PropertyRef Name="Approved_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Operations_Digital_Scenarios_Platform_Operations_Digital_lk">
+    <End Type="LOSEntitiesDataModel.Platform_Operations_Digital_lk" Role="Platform_Operations_Digital_lk" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Platform_Operations_Digital_Scenarios" Role="Platform_Operations_Digital_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Platform_Operations_Digital_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Operations_Digital_Scenarios">
+        <PropertyRef Name="Digital_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Operations_Digital_Scenarios_User_Info">
+    <End Type="LOSEntitiesDataModel.User_Info" Role="User_Info" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Platform_Operations_Digital_Scenarios" Role="Platform_Operations_Digital_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Operations_Digital_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Operations_Video_Scenarios_Platform_Operations_Video_lk">
+    <End Type="LOSEntitiesDataModel.Platform_Operations_Video_lk" Role="Platform_Operations_Video_lk" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Platform_Operations_Video_Scenarios" Role="Platform_Operations_Video_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Platform_Operations_Video_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Operations_Video_Scenarios">
+        <PropertyRef Name="Video_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Operations_Video_Scenarios_User_Info">
+    <End Type="LOSEntitiesDataModel.User_Info" Role="User_Info" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Platform_Operations_Video_Scenarios" Role="Platform_Operations_Video_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Operations_Video_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Ops_Local_Scenarios_User_Info">
+    <End Type="LOSEntitiesDataModel.User_Info" Role="User_Info" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Platform_Ops_Local_Scenarios" Role="Platform_Ops_Local_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Ops_Local_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Ops_OOH_Scenarios_User_Info">
+    <End Type="LOSEntitiesDataModel.User_Info" Role="User_Info" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Platform_Ops_OOH_Scenarios" Role="Platform_Ops_OOH_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Ops_OOH_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Platform_Ops_Publishing_Scenarios_User_Info">
+    <End Type="LOSEntitiesDataModel.User_Info" Role="User_Info" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Platform_Ops_Publishing_Scenarios" Role="Platform_Ops_Publishing_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Platform_Ops_Publishing_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_lk_PM_Skills">
+    <End Type="LOSEntitiesDataModel.PM_Skills" Role="PM_Skills" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Project_Management_lk" Role="Project_Management_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PM_Skills">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_lk">
+        <PropertyRef Name="PM_Skills_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_Duration_lk_Service_Level">
+    <End Type="LOSEntitiesDataModel.Service_Level" Role="Service_Level" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Project_Management_Duration_lk" Role="Project_Management_Duration_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service_Level">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_Duration_lk">
+        <PropertyRef Name="Service_Level_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_Scenarios_Project_Management_Duration_lk">
+    <End Type="LOSEntitiesDataModel.Project_Management_Duration_lk" Role="Project_Management_Duration_lk" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Project_Management_Scenarios" Role="Project_Management_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project_Management_Duration_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_Scenarios">
+        <PropertyRef Name="Project_Management_Duration_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_lk_Project_Visibility">
+    <End Type="LOSEntitiesDataModel.Project_Visibility" Role="Project_Visibility" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Project_Management_lk" Role="Project_Management_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project_Visibility">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_lk">
+        <PropertyRef Name="Project_Visibility_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_lk_Service_Level">
+    <End Type="LOSEntitiesDataModel.Service_Level" Role="Service_Level" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Project_Management_lk" Role="Project_Management_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service_Level">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_lk">
+        <PropertyRef Name="Service_Level_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_lk_Tech_Expertise">
+    <End Type="LOSEntitiesDataModel.Tech_Expertise" Role="Tech_Expertise" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Project_Management_lk" Role="Project_Management_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tech_Expertise">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_lk">
+        <PropertyRef Name="Tech_Expertise_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_Scenarios_Project_Management_lk">
+    <End Type="LOSEntitiesDataModel.Project_Management_lk" Role="Project_Management_lk" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Project_Management_Scenarios" Role="Project_Management_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project_Management_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_Scenarios">
+        <PropertyRef Name="Project_Management_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Project_Management_Scenarios_User_Info">
+    <End Type="LOSEntitiesDataModel.User_Info" Role="User_Info" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.Project_Management_Scenarios" Role="Project_Management_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project_Management_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Info_Role">
+    <End Type="LOSEntitiesDataModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="LOSEntitiesDataModel.User_Info" Role="User_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Info">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAAG_Estimate_and_CPM_lk_Service_Level">
+    <End Type="LOSEntitiesDataModel.Service_Level" Role="Service_Level" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.TAAG_Estimate_and_CPM_lk" Role="TAAG_Estimate_and_CPM_lk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service_Level">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TAAG_Estimate_and_CPM_lk">
+        <PropertyRef Name="Service_Level_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAAG_Estimate_and_CPM_Scenarios_TAAG_Estimate_and_CPM_lk">
+    <End Type="LOSEntitiesDataModel.TAAG_Estimate_and_CPM_lk" Role="TAAG_Estimate_and_CPM_lk" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.TAAG_Estimate_and_CPM_Scenarios" Role="TAAG_Estimate_and_CPM_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAAG_Estimate_and_CPM_lk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TAAG_Estimate_and_CPM_Scenarios">
+        <PropertyRef Name="TAAG_Estimate_and_CPM_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TAAG_Estimate_and_CPM_Scenarios_User_Info">
+    <End Type="LOSEntitiesDataModel.User_Info" Role="User_Info" Multiplicity="0..1" />
+    <End Type="LOSEntitiesDataModel.TAAG_Estimate_and_CPM_Scenarios" Role="TAAG_Estimate_and_CPM_Scenarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TAAG_Estimate_and_CPM_Scenarios">
+        <PropertyRef Name="Created_By" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
